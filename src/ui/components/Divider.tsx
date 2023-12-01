@@ -1,3 +1,3 @@
 export default function Divider() {
-  return <div className="w-full h-[1px] bg-gray-300 rounded-full my-6" />;
+  return <div className="w-full h-[1px] bg-gray-300 rounded-full my-3" />;
 }
