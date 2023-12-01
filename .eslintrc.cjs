@@ -41,5 +41,11 @@ module.exports = {
     'trailing-comma': 0,
     '@typescript-eslint/comma-dangle': 0,
     'linebreak-style': 0,
+    multiline: 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    'no-explicit-any': 0,
+    'react/require-default-props': 0,
+    'jsx-a11y/anchor-is-valid': 0,
+    'object-curly-newline': 0,
   },
 };
