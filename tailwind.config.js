@@ -15,6 +15,9 @@ export default {
       animation: {
         show: 'show 0.1s ease-in-out',
       },
+      fontFamily: {
+        sans: 'iransansfa',
+      },
     },
   },
   plugins: [],
