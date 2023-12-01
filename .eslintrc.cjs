@@ -40,5 +40,6 @@ module.exports = {
     'no-unexpected-multiline': 'error',
     'trailing-comma': 0,
     '@typescript-eslint/comma-dangle': 0,
+    'linebreak-style': 0,
   },
 };
