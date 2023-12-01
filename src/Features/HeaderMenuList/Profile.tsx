@@ -13,9 +13,9 @@ import {
   PiQuestionThin,
 } from 'react-icons/pi';
 import RolesEnum from '../../Enums/RolesEnum';
-import Badge from '../../ui/Badge';
-import Divider from '../../ui/Divider';
-import HeaderDropdown from '../../ui/HeaderDropdown';
+import Badge from '../../ui/components/Badge';
+import Divider from '../../ui/components/Divider';
+import HeaderDropdown from '../../ui/components/HeaderDropdown';
 
 interface IProfileUtilsList {
   id: number;

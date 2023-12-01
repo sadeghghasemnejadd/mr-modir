@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from './Header';
 import Main from './Main';
-import Nav from './Nav';
+import Nav from '../Nav';
 
 export default function AppLayout() {
   return (

@@ -7,7 +7,7 @@ import {
   useRef,
   useEffect,
 } from 'react';
-import clickOutside from '../utils/clickOutSide';
+import clickOutside from '../../utils/clickOutSide';
 
 interface IHeaderDropdownProps {
   children: ReactNode;

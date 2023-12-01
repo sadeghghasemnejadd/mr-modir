@@ -1,4 +1,4 @@
-import Profile from '../Features/HeaderMenuList/Profile';
+import Profile from '../../Features/HeaderMenuList/Profile';
 
 export default function Header() {
   return (
