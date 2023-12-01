@@ -6,7 +6,7 @@ import Nav from './Nav';
 
 export default function AppLayout() {
   return (
-    <div className="grid grid-cols-[1fr_300px] grid-rows-[75px_1fr] p-12 gap-6 min-h-screen max-h-screen overflow-hidden">
+    <div className="grid grid-cols-[300px_1fr] grid-rows-[75px_1fr]  gap-6 min-h-screen max-h-screen overflow-hidden">
       <Header />
       <Nav />
       <Main>
