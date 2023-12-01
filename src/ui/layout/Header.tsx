@@ -2,7 +2,7 @@ import Profile from '../../Features/HeaderMenuList/Profile';
 
 export default function Header() {
   return (
-    <header className="col-[2/-1] h-full rounded-md shadow-box mt-12 ml-12 px-12 flex items-center flex-row-reverse">
+    <header className="col-[2/-1] ml-12 mt-12 flex h-full flex-row-reverse items-center rounded-md px-12 shadow-box">
       <Profile />
     </header>
   );

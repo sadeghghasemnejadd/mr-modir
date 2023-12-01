@@ -21,6 +21,10 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint'],
     },
+    {
+      files: ['prettier.config.cjs'],
+      processor: 'disable-eslint',
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

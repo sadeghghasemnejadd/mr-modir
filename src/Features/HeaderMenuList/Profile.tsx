@@ -85,10 +85,10 @@ export default function Profile() {
             <img
               src="images/avatars/001.png"
               alt="avatar"
-              className="w-12 h-12 rounded-full border border-red-900"
+              className="h-12 w-12 rounded-full border border-red-900"
             />
-            <span className="w-3 h-3 bg-green-500 rounded-full block absolute bottom-0 right-0 border border-transparent animate-ping " />
-            <span className="w-3 h-3 bg-green-600 rounded-full block absolute bottom-0 right-0 border border-transparent " />
+            <span className="absolute bottom-0 right-0 block h-3 w-3 animate-ping rounded-full border border-transparent bg-green-500 " />
+            <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full border border-transparent bg-green-600 " />
           </div>
         </HeaderDropdown.Thumbnail>
         <HeaderDropdown.DropBox name="profile">
@@ -96,10 +96,10 @@ export default function Profile() {
             <img
               src="images/avatars/001.png"
               alt="avatar"
-              className="w-16 h-16 rounded-full border border-red-900"
+              className="h-16 w-16 rounded-full border border-red-900"
             />
-            <div className="text-right flex flex-col justify-between ">
-              <div className="flex gap-3 items-center">
+            <div className="flex flex-col justify-between text-right ">
+              <div className="flex items-center gap-3">
                 <p className="font-bold">صادق قاسم نژاد</p>
                 <Badge text={RolesEnum.Admin} />
               </div>
@@ -113,13 +113,13 @@ export default function Profile() {
             {profileUtilsList.map((profile) => (
               <li
                 key={profile.id}
-                className="flex items-center gap-2 hover:bg-red-100 py-3 px-3 group rounded-lg transition-all [&>svg]:hover:stroke-red-600"
+                className=" group  rounded-lg transition-all hover:bg-red-100"
               >
-                {profile.icon}
                 <Link
                   to={profile.route}
-                  className="font-bold no-underline flex gap-2 group-hover:text-red-700 items-center"
+                  className="flex items-center gap-2 px-3 py-3 font-bold group-hover:text-red-700 [&>svg]:group-hover:stroke-red-600"
                 >
+                  {profile.icon}
                   {profile.name}
                   {profile.badge && (
                     <Badge
@@ -138,13 +138,13 @@ export default function Profile() {
             {profileSettingList.map((profile) => (
               <li
                 key={profile.id}
-                className="flex items-center gap-2 hover:bg-red-100 py-3 px-3 rounded-lg group transition-all [&>svg]:hover:fill-red-600"
+                className=" group  rounded-lg transition-all hover:bg-red-100"
               >
-                {profile.icon}
                 <Link
                   to={profile.route}
-                  className="font-bold no-underline flex gap-2 group-hover:text-red-700 items-center"
+                  className="flex items-center gap-2 px-3 py-3 font-bold no-underline group-hover:text-red-700 [&>svg]:group-hover:fill-red-600"
                 >
+                  {profile.icon}
                   {profile.name}
                   {profile.badge && (
                     <Badge

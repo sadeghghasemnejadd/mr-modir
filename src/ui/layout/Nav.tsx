@@ -1,6 +1,6 @@
 export default function Nav() {
   return (
-    <nav className="bg-red-50 row-span-full col-[1/2] rounded-2xl border-red-100 border-2 shadow-md">
+    <nav className="col-[1/2] row-span-full rounded-2xl border-2 border-red-100 bg-red-50 shadow-md">
       <ul>
         <li>home</li>
       </ul>

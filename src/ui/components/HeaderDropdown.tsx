@@ -97,7 +97,7 @@ function DropBox({ children, name }: IDropBoxProps) {
   const { openDropdownName } = useContext<IContextValue>(HeaderDropdownContext);
   if (openDropdownName !== name) return undefined;
   return (
-    <div className="absolute top-[150%] w-96 px-6 py-6 left-0  rounded-xl shadow-box animate-show">
+    <div className="absolute left-0 top-[150%] w-96 animate-show rounded-xl  px-6 py-6 shadow-box">
       {children}
     </div>
   );
