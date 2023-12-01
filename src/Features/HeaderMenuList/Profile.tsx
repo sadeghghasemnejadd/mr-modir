@@ -103,7 +103,9 @@ export default function Profile() {
                 <p className="text-lg font-bold">صادق قاسم نژاد</p>
                 <Badge text={RolesEnum.Admin} />
               </div>
-              <p className="text-sm">ghasemnejad.sadegh@gmail.com</p>
+              <p className="text-sm text-gray-500">
+                ghasemnejad.sadegh@gmail.com
+              </p>
             </div>
           </div>
           <Divider />
