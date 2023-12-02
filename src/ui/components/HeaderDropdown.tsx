@@ -19,6 +19,7 @@ interface IThumbnailProps {
 interface IDropBoxProps {
     children: ReactNode
     name: string
+    size?: 'sm' | 'md'
 }
 interface IContextValue {
     handleOpenDropdown?: (id: string) => void
@@ -93,13 +94,18 @@ function Thumbnail({ children, name }: IThumbnailProps) {
     )
 }
 
-function DropBox({ children, name }: IDropBoxProps) {
+function DropBox({ children, name, size = 'md' }: IDropBoxProps) {
     const { openDropdownName } = useContext<IContextValue>(
         HeaderDropdownContext
     )
     if (openDropdownName !== name) return undefined
     return (
-        <div className="absolute left-0 top-[150%] w-96 animate-show rounded-xl  px-6 py-6 shadow-box">
+        <div
+            className={`absolute left-0 top-[150%] animate-show rounded-xl  px-6 py-6 shadow-box 
+            ${size === 'md' ? 'w-96' : ''}
+            ${size === 'sm' ? 'w-48' : ''}
+            `}
+        >
             {children}
         </div>
     )

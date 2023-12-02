@@ -120,7 +120,7 @@ export default function Notifications() {
                             </ul>
                             <Link
                                 to="/"
-                                className="mt-3 block w-full text-center text-sm transition-all hover:text-red-500"
+                                className="mt-3 block w-full rounded-lg py-3 text-center text-sm transition-all hover:bg-red-100 hover:text-red-500"
                             >
                                 مشاهده همه پیام ها
                             </Link>
