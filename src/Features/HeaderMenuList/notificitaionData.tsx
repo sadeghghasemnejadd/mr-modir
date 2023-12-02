@@ -32,6 +32,24 @@ const notificationData: INotificationData[] = [
         date: new Date('2023-11-28T09:52:04.793Z'),
         logoStatus: LogoStatusEnum.successful,
     },
+    {
+        id: 2,
+        logo: <PiConfettiBold />,
+        title: 'سفارش جدید!',
+        message: 'سما پروژه جدیدی از طرف مهسا امینی دریافت کرده اید!.',
+        readStatus: ReadStatusEnum.unRead,
+        date: new Date('2023-11-28T09:52:04.793Z'),
+        logoStatus: LogoStatusEnum.successful,
+    },
+    {
+        id: 3,
+        logo: <PiConfettiBold />,
+        title: 'سفارش جدید!',
+        message: 'سما پروژه جدیدی از طرف مهسا امینی دریافت کرده اید!.',
+        readStatus: ReadStatusEnum.unRead,
+        date: new Date('2023-11-28T09:52:04.793Z'),
+        logoStatus: LogoStatusEnum.successful,
+    },
 ]
 
 export default notificationData
