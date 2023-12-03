@@ -99,7 +99,7 @@ function Box({ children, name, title, footerButtonOption }: IBoxProps) {
     return (
         <>
             <div
-                className={`fixed top-0 z-50 flex  h-screen w-[30rem] flex-col bg-gray-100 px-6 py-3 shadow-box transition-all duration-300 dark:bg-slate-700 dark:shadow-box-light
+                className={`bg-main shadow-main fixed top-0  z-50 flex h-screen w-[30rem] flex-col px-6 py-3 transition-all duration-300 
                 ${direction === 'right' ? 'right-0 translate-x-full' : ''}
                 ${direction === 'left' ? 'left-0 -translate-x-full' : ''}
                 ${
@@ -108,9 +108,9 @@ function Box({ children, name, title, footerButtonOption }: IBoxProps) {
                         : ''
                 }`}
             >
-                <div className="mb-3 flex flex-row-reverse items-center justify-between border-b-[1px] border-b-slate-900/10 pb-2 dark:border-b-slate-50/10">
+                <div className="flex-rev-v-center mb-3 justify-between border-b-[1px] border-b-slate-900/10 pb-2 dark:border-b-slate-50/10">
                     <span
-                        className={`flex cursor-pointer items-center justify-center rounded-full bg-gray-200 p-2 shadow-box hover:bg-gray-300 dark:bg-slate-900 dark:shadow-box-light dark:hover:bg-slate-600 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
+                        className={`flex-center shadow-main  cursor-pointer  rounded-full  p-2  hover:bg-gray-200 dark:hover:bg-slate-600 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
                     `}
                         aria-hidden="true"
                         onClick={() => onOpenDrawer?.('')}

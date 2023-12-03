@@ -59,7 +59,7 @@ const modeData: IModeData[] = [
         icon: <PiMoon size={20} />,
     },
     {
-        id: 1,
+        id: 2,
         name: 'سیستم',
         modeName: ThemeModeEnum.system,
         icon: <PiChalkboardSimple size={20} />,
@@ -79,17 +79,17 @@ export default function SettingTheme() {
         <li>
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="setting">
-                    <div className="group relative">
-                        <span className="[&>svg]:transition-all [&>svg]:duration-100  [&>svg]:group-hover:fill-primary-500">
+                    <div className="flex-center group relative">
+                        <span className="svg-duration-100 [&>svg]:group-hover:fill-primary-500">
                             <PiPaintBrushLight size={30} />
                         </span>
-                        <span className=" absolute -top-2 left-0 [&>svg]:transition-all [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
+                        <span className=" svg-duration-100 absolute -top-2 left-0 [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
                             <PiGearFine id="gear" />
                         </span>
                     </div>
                 </HeaderDropdown.Thumbnail>
                 <HeaderDropdown.DropBox name="setting" size="sm">
-                    <div className="flex flex-col gap-6">
+                    <div className="flex-cols gap-6">
                         <div>
                             <p>رنگ ها</p>
                             <Divider />
@@ -117,11 +117,11 @@ export default function SettingTheme() {
                         <div>
                             <p>حالت ها</p>
                             <Divider />
-                            <div className="flex flex-col gap-2">
+                            <div className="flex-cols gap-2">
                                 {modeData.map((mode) => (
                                     <div
                                         key={mode.id}
-                                        className={`group flex cursor-pointer items-center gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500 ${
+                                        className={`flex-v-center group cursor-pointer gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500 ${
                                             themeMode === mode.modeName
                                                 ? '[&>svg]:fill-primary-500 '
                                                 : ''

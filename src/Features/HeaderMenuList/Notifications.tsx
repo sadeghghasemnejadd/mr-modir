@@ -35,9 +35,9 @@ export default function Notifications() {
         <li>
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="notification">
-                    <div className=" group relative transition-all [&>svg]:transition-none [&>svg]:hover:fill-primary-600 dark:[&>svg]:fill-primary-100 dark:[&>svg]:hover:fill-primary-500">
+                    <div className=" flex-center group relative transition-all [&>svg]:transition-none [&>svg]:hover:fill-primary-600 dark:[&>svg]:fill-primary-100 dark:[&>svg]:hover:fill-primary-500">
                         <PiBellSimple size="30" />
-                        <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary-600 text-xs text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950">
+                        <span className="flex-center absolute -right-0 -top-2 h-4 w-4  rounded-full bg-primary-600 text-xs text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950">
                             {
                                 notifications.filter(
                                     (notif) =>
@@ -49,7 +49,7 @@ export default function Notifications() {
                     </div>
                 </HeaderDropdown.Thumbnail>
                 <HeaderDropdown.DropBox name="notification">
-                    <div className="flex items-center justify-between  dark:[&>svg]:fill-primary-50">
+                    <div className="flex-v-center justify-between  dark:[&>svg]:fill-primary-50">
                         <PiEnvelopeOpen size="30" />
                         <p>پیام ها</p>
                     </div>
@@ -76,12 +76,12 @@ export default function Notifications() {
                                                 <img
                                                     src={notification.avatar}
                                                     alt={notification.title}
-                                                    className="h-12 w-12 rounded-full dark:bg-slate-500"
+                                                    className="size-12 rounded-full dark:bg-slate-500"
                                                 />
                                             )}
                                             {notification.logo && (
                                                 <span
-                                                    className={`flex h-12 w-12 items-center justify-center rounded-full [&>svg]:h-6 [&>svg]:w-6  ${
+                                                    className={` flex-center size-12 rounded-full [&>svg]:h-6 [&>svg]:w-6  ${
                                                         notification.logoStatus ===
                                                         LogoStatusEnum.successful
                                                             ? 'bg-green-500/30 dark:bg-green-900/30 [&>svg]:fill-green-700 dark:[&>svg]:fill-green-300'
@@ -91,7 +91,7 @@ export default function Notifications() {
                                                     {notification.logo}
                                                 </span>
                                             )}
-                                            <div className="flex flex-col gap-1">
+                                            <div className="flex-cols gap-1">
                                                 <h5 className="font-bold">
                                                     {notification.title}
                                                 </h5>

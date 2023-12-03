@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 interface IMainProps {
-  children: ReactNode;
+    children: ReactNode
 }
 
 export default function Main({ children }: IMainProps) {
-  return <main className="ml-12 mt-12 overflow-auto">{children}</main>;
+    return <main className="ml-12 mt-6 overflow-auto">{children}</main>
 }

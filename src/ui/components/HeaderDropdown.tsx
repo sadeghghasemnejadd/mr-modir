@@ -87,7 +87,7 @@ function Thumbnail({ children, name }: IThumbnailProps) {
         <div
             onClick={handleClickThumbnail}
             aria-hidden="true"
-            className="flex h-12 w-12 cursor-pointer items-center justify-center"
+            className="flex-center cursor-pointer"
         >
             {children}
         </div>
@@ -101,7 +101,7 @@ function DropBox({ children, name, size = 'md' }: IDropBoxProps) {
     if (openDropdownName !== name) return undefined
     return (
         <div
-            className={`absolute left-0 top-[150%] animate-show rounded-xl px-6 py-6 shadow-box dark:bg-slate-800 dark:shadow-box-light
+            className={`bg-main shadow-main absolute left-0 top-[150%] animate-show rounded-xl px-6 py-6
             ${size === 'md' ? 'w-96' : ''}
             ${size === 'sm' ? 'w-48' : ''}
             `}

@@ -41,8 +41,39 @@
 
 @layer base {
     * {
-        @apply text-primary-950;
-        @apply transition-colors;
-        @apply dark:text-primary-50;
+        @apply text-primary-950 transition-colors dark:text-primary-50;
+    }
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+    .svg-duration-100 {
+        @apply [&>svg]:transition-all [&>svg]:duration-100;
+    }
+    .flex-cols {
+        @apply flex flex-col;
+    }
+    .flex-v-center {
+        @apply flex items-center;
+    }
+    .flex-rev-v-center {
+        @apply flex flex-row-reverse items-center;
+    }
+    .flex-col-v-center {
+        @apply flex flex-col justify-center;
+    }
+    .bg-main {
+        @apply bg-gray-100 dark:bg-slate-800;
+    }
+    .shadow-main {
+        @apply shadow-box dark:shadow-box-light;
+    }
+    .size-12 {
+        @apply h-12 w-12;
+    }
+    .online-state {
+        @apply absolute bottom-0 right-0 block h-3 w-3 rounded-full border border-transparent bg-green-600;
+    }
+    .avatar {
+        @apply rounded-full border border-primary-900 dark:border-primary-500 dark:bg-slate-500;
     }
 }

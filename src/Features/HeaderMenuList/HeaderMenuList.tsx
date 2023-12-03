@@ -5,7 +5,7 @@ import SettingTheme from './SettingTheme'
 
 export default function HeaderMenuList() {
     return (
-        <ul className="flex flex-row-reverse items-center gap-4">
+        <ul className="flex-rev-v-center gap-8">
             <Profile />
             <Notifications />
             <SettingTheme />

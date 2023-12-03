@@ -5,11 +5,8 @@ export default function Activity() {
     return (
         <li>
             <Drawer direction="left">
-                <Drawer.Thumbnail
-                    name="activity"
-                    classNames="flex h-12 w-12 items-center justify-center"
-                >
-                    <span className="[&>svg]:transition-all [&>svg]:duration-100 [&>svg]:hover:fill-primary-500">
+                <Drawer.Thumbnail name="activity">
+                    <span className="flex-center svg-duration-100 [&>svg]:hover:fill-primary-500">
                         <PiClockCounterClockwise size={30} />
                     </span>
                 </Drawer.Thumbnail>
