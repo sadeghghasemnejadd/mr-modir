@@ -2,14 +2,20 @@ import { MouseEvent, useState } from 'react'
 import { PiBellSimple, PiEnvelopeOpen, PiX } from 'react-icons/pi'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
-import notificationData from './notificitaionData'
+import notificationData from './data/notificitaionData'
 import LogoStatusEnum from '../../Enums/logoStatusEnum'
 import { getCalculatedDateAndTime } from '../../utils/calendar'
 import ReadStatusEnum from '../../Enums/ReadStatusEnum'
 import LinkButton from '../../ui/components/LinkButton'
 
 export default function Notifications() {
-    const [notifications, setNotifications] = useState(notificationData)
+    const [notifications, setNotifications] = useState(() => {
+        const sortedNotification = notificationData.sort(
+            (prevNotification, nextNotification) =>
+                Number(nextNotification.date) - Number(prevNotification.date)
+        )
+        return sortedNotification
+    })
 
     const handleRemoveNotifications = (id: number, event: MouseEvent) => {
         event.stopPropagation()
@@ -24,6 +30,7 @@ export default function Notifications() {
             )
         )
     }
+
     return (
         <li>
             <HeaderDropdown>

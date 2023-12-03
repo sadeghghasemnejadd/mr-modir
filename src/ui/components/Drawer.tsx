@@ -28,6 +28,7 @@ interface IDrawerProps {
 interface IThumbnailProps {
     children: ReactNode
     name: string
+    classNames?: string
 }
 interface IBoxProps {
     children: ReactNode
@@ -74,7 +75,7 @@ function Drawer({ children, direction }: IDrawerProps) {
         </DrawerContext.Provider>
     )
 }
-function Thumbnail({ children, name }: IThumbnailProps) {
+function Thumbnail({ children, name, classNames }: IThumbnailProps) {
     const { onOpenDrawer } = useContext(DrawerContext)
 
     const handleOpenDrawer = () => {
@@ -84,7 +85,7 @@ function Thumbnail({ children, name }: IThumbnailProps) {
         <div
             onClick={handleOpenDrawer}
             aria-hidden="true"
-            className="cursor-pointer"
+            className={`cursor-pointer ${classNames}`}
         >
             {children}
         </div>
@@ -98,18 +99,18 @@ function Box({ children, name, title, footerButtonOption }: IBoxProps) {
     return (
         <>
             <div
-                className={`dark:shadow-box-light fixed top-0 z-50  flex h-screen w-96 flex-col bg-gray-100 px-6 py-3 shadow-box transition-all duration-300 dark:bg-slate-700
-            ${direction === 'right' ? 'right-0 translate-x-full' : ''}
-            ${direction === 'left' ? 'left-0 -translate-x-full' : ''}
-            ${
-                isOpened
-                    ? `${direction === 'right' ? '-' : ''}translate-x-0`
-                    : ''
-            }`}
+                className={`fixed top-0 z-50 flex  h-screen w-[30rem] flex-col bg-gray-100 px-6 py-3 shadow-box transition-all duration-300 dark:bg-slate-700 dark:shadow-box-light
+                ${direction === 'right' ? 'right-0 translate-x-full' : ''}
+                ${direction === 'left' ? 'left-0 -translate-x-full' : ''}
+                ${
+                    isOpened
+                        ? `${direction === 'right' ? '-' : ''}translate-x-0`
+                        : ''
+                }`}
             >
                 <div className="mb-3 flex flex-row-reverse items-center justify-between border-b-[1px] border-b-slate-900/10 pb-2 dark:border-b-slate-50/10">
                     <span
-                        className={`dark:shadow-box-light flex cursor-pointer items-center justify-center rounded-full bg-gray-200 p-2 shadow-box hover:bg-gray-300 dark:bg-slate-900 dark:hover:bg-slate-600 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
+                        className={`flex cursor-pointer items-center justify-center rounded-full bg-gray-200 p-2 shadow-box hover:bg-gray-300 dark:bg-slate-900 dark:shadow-box-light dark:hover:bg-slate-600 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
                     `}
                         aria-hidden="true"
                         onClick={() => onOpenDrawer?.('')}
@@ -130,7 +131,7 @@ function Box({ children, name, title, footerButtonOption }: IBoxProps) {
             </div>
             {openedDrawer === name && (
                 <div
-                    className="fixed left-0 top-0 z-40 h-screen w-screen animate-show bg-slate-300/50 backdrop-blur-sm dark:bg-slate-800/60"
+                    className="fixed left-0 top-0 z-40 h-screen w-screen animate-show bg-slate-300/50 backdrop-blur-[1px] dark:bg-slate-800/60"
                     onClick={() => onOpenDrawer?.('')}
                     aria-hidden="true"
                 />

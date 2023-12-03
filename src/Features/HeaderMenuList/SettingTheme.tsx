@@ -76,7 +76,7 @@ export default function SettingTheme() {
         changeModeTheme(colorMOde)
     }
     return (
-        <div>
+        <li>
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="setting">
                     <div className="group relative">
@@ -148,6 +148,6 @@ export default function SettingTheme() {
                     </div>
                 </HeaderDropdown.DropBox>
             </HeaderDropdown>
-        </div>
+        </li>
     )
 }
