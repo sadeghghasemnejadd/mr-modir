@@ -28,9 +28,9 @@ export default function Notifications() {
         <li>
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="notification">
-                    <div className=" group relative transition-all [&>svg]:hover:fill-primary-600">
+                    <div className=" group relative transition-all [&>svg]:transition-none [&>svg]:hover:fill-primary-600 dark:[&>svg]:fill-primary-100 dark:[&>svg]:hover:fill-primary-500">
                         <PiBellSimple size="30" />
-                        <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary-600 text-xs text-primary-50 group-hover:animate-bounce">
+                        <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary-600 text-xs text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950">
                             {
                                 notifications.filter(
                                     (notif) =>
@@ -42,13 +42,13 @@ export default function Notifications() {
                     </div>
                 </HeaderDropdown.Thumbnail>
                 <HeaderDropdown.DropBox name="notification">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between  dark:[&>svg]:fill-primary-50">
                         <PiEnvelopeOpen size="30" />
                         <p>پیام ها</p>
                     </div>
                     <Divider />
                     {!notifications.length && (
-                        <p className="text-center">پیامی وجود ندارد!</p>
+                        <p className="text-center ">پیامی وجود ندارد!</p>
                     )}
                     {!!notifications.length && (
                         <>
@@ -56,7 +56,7 @@ export default function Notifications() {
                                 {notifications.map((notification) => (
                                     <li
                                         key={notification.id}
-                                        className="group rounded-lg transition-all hover:bg-gray-200/50"
+                                        className="group rounded-lg transition-all hover:bg-gray-200/50  dark:hover:bg-gray-700"
                                         onClick={() =>
                                             handleReadNotification(
                                                 notification.id
@@ -69,7 +69,7 @@ export default function Notifications() {
                                                 <img
                                                     src={notification.avatar}
                                                     alt={notification.title}
-                                                    className="h-12 w-12 rounded-full"
+                                                    className="h-12 w-12 rounded-full dark:bg-slate-500"
                                                 />
                                             )}
                                             {notification.logo && (
@@ -77,7 +77,7 @@ export default function Notifications() {
                                                     className={`flex h-12 w-12 items-center justify-center rounded-full [&>svg]:h-6 [&>svg]:w-6  ${
                                                         notification.logoStatus ===
                                                         LogoStatusEnum.successful
-                                                            ? 'bg-green-500/30 [&>svg]:fill-green-700'
+                                                            ? 'bg-green-500/30 dark:bg-green-900/30 [&>svg]:fill-green-700 dark:[&>svg]:fill-green-300'
                                                             : ''
                                                     }`}
                                                 >
@@ -120,7 +120,7 @@ export default function Notifications() {
                             </ul>
                             <Link
                                 to="/"
-                                className="mt-3 block w-full rounded-lg py-3 text-center text-sm transition-all hover:bg-primary-100 hover:text-primary-500"
+                                className="mt-3 block w-full rounded-lg py-3 text-center text-sm transition-all hover:bg-primary-100 hover:text-primary-500  dark:hover:bg-primary-800"
                             >
                                 مشاهده همه پیام ها
                             </Link>

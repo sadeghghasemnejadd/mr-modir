@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import {
     PiGearFine,
     PiPaintBucket,
@@ -7,13 +8,20 @@ import {
 } from 'react-icons/pi'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
-import ThemeColorEnum from '../../Enums/themeColorEnum'
+import ThemeColorEnum from '../../Enums/ThemeColorEnum'
 import useTheme from '../../hooks/useTheme'
+import ThemeModeEnum from '../../Enums/ThemeModeEnum'
 
 interface IColorData {
     id: number
     color: string
     colorName: ThemeColorEnum
+}
+interface IModeData {
+    id: number
+    name: string
+    modeName: ThemeModeEnum
+    icon: ReactNode
 }
 const colorsData: IColorData[] = [
     {
@@ -37,10 +45,35 @@ const colorsData: IColorData[] = [
         colorName: ThemeColorEnum.green,
     },
 ]
+const modeData: IModeData[] = [
+    {
+        id: 0,
+        name: 'روشن',
+        modeName: ThemeModeEnum.light,
+        icon: <PiSun size={20} />,
+    },
+    {
+        id: 1,
+        name: 'تیره',
+        modeName: ThemeModeEnum.dark,
+        icon: <PiMoon size={20} />,
+    },
+    {
+        id: 1,
+        name: 'سیستم',
+        modeName: ThemeModeEnum.system,
+        icon: <PiChalkboardSimple size={20} />,
+    },
+]
 export default function SettingTheme() {
-    const { changeColorTheme, themeColor } = useTheme()
+    const { changeColorTheme, themeColor, changeModeTheme, themeMode } =
+        useTheme()
+
     const handleChangeThemeColor = (colorName: ThemeColorEnum) => {
         changeColorTheme(colorName)
+    }
+    const handleChangeThemeMode = (colorMOde: ThemeModeEnum) => {
+        changeModeTheme(colorMOde)
     }
     return (
         <div>
@@ -68,7 +101,7 @@ export default function SettingTheme() {
                                             color.color
                                         } ${
                                             themeColor === color.colorName
-                                                ? 'outline outline-4 outline-primary-300'
+                                                ? 'outline outline-4 outline-primary-300 dark:outline-primary-400'
                                                 : ''
                                         }`}
                                         onClick={() =>
@@ -85,24 +118,31 @@ export default function SettingTheme() {
                             <p>حالت ها</p>
                             <Divider />
                             <div className="flex flex-col gap-2">
-                                <div className=" group flex cursor-pointer items-center gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500">
-                                    <PiSun size={20} />
-                                    <p className="group-hover:text-primary-500">
-                                        روشن
-                                    </p>
-                                </div>
-                                <div className=" group flex cursor-pointer items-center gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500">
-                                    <PiMoon size={20} />
-                                    <p className="group-hover:text-primary-500">
-                                        تاریک
-                                    </p>
-                                </div>
-                                <div className=" group flex cursor-pointer items-center gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500">
-                                    <PiChalkboardSimple size={20} />
-                                    <p className="group-hover:text-primary-500">
-                                        سیستم
-                                    </p>
-                                </div>
+                                {modeData.map((mode) => (
+                                    <div
+                                        key={mode.id}
+                                        className={`group flex cursor-pointer items-center gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500 ${
+                                            themeMode === mode.modeName
+                                                ? '[&>svg]:fill-primary-500 dark:[&>svg]:fill-primary-400'
+                                                : ''
+                                        }`}
+                                        onClick={() =>
+                                            handleChangeThemeMode(mode.modeName)
+                                        }
+                                        aria-hidden="true"
+                                    >
+                                        {mode.icon}
+                                        <p
+                                            className={`group-hover:text-primary-500 ${
+                                                themeMode === mode.modeName
+                                                    ? 'text-primary-500 dark:text-primary-400'
+                                                    : ''
+                                            }`}
+                                        >
+                                            {mode.name}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

@@ -85,7 +85,7 @@ export default function Profile() {
                         <img
                             src="images/avatars/001.png"
                             alt="avatar"
-                            className="h-12 w-12 rounded-full border border-primary-900"
+                            className="h-12 w-12 rounded-full border border-primary-900 dark:border-primary-500 dark:bg-slate-500"
                         />
                         <span className="absolute bottom-0 right-0 block h-3 w-3 animate-ping rounded-full border border-transparent bg-green-500 " />
                         <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full border border-transparent bg-green-600 " />
@@ -96,14 +96,14 @@ export default function Profile() {
                         <img
                             src="images/avatars/001.png"
                             alt="avatar"
-                            className="h-16 w-16 rounded-full border border-primary-900"
+                            className="h-16 w-16 rounded-full border border-primary-900 dark:border-primary-500 dark:bg-slate-500"
                         />
                         <div className="flex flex-col justify-between text-right ">
                             <div className="flex items-center gap-3">
                                 <p className="font-bold">صادق قاسم نژاد</p>
                                 <Badge text={RolesEnum.Admin} />
                             </div>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
                                 ghasemnejad.sadegh@gmail.com
                             </p>
                         </div>
@@ -113,11 +113,11 @@ export default function Profile() {
                         {profileUtilsList.map((profile) => (
                             <li
                                 key={profile.id}
-                                className=" group rounded-lg transition-all hover:bg-primary-100"
+                                className=" group rounded-lg transition-all hover:bg-primary-100  dark:hover:bg-primary-900"
                             >
                                 <Link
                                     to={profile.route}
-                                    className="flex items-center gap-2 p-3 font-bold group-hover:text-primary-700 [&>svg]:group-hover:stroke-primary-600"
+                                    className="flex items-center gap-2 p-3 font-bold group-hover:text-primary-700 dark:group-hover:text-primary-100 [&>svg]:group-hover:stroke-primary-600 dark:[&>svg]:group-hover:stroke-primary-100"
                                 >
                                     {profile.icon}
                                     {profile.name}
@@ -138,11 +138,11 @@ export default function Profile() {
                         {profileSettingList.map((profile) => (
                             <li
                                 key={profile.id}
-                                className=" group  rounded-lg transition-all hover:bg-primary-100"
+                                className=" group  rounded-lg transition-all hover:bg-primary-100  dark:hover:bg-primary-900"
                             >
                                 <Link
                                     to={profile.route}
-                                    className="flex items-center gap-2 px-3 py-3 font-bold no-underline group-hover:text-primary-700 [&>svg]:group-hover:fill-primary-600"
+                                    className="flex items-center gap-2 px-3 py-3 font-bold no-underline group-hover:text-primary-700 dark:group-hover:text-primary-100 [&>svg]:group-hover:fill-primary-600 dark:[&>svg]:group-hover:fill-primary-100"
                                 >
                                     {profile.icon}
                                     {profile.name}

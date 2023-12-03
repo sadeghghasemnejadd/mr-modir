@@ -4,7 +4,8 @@ export default {
     theme: {
         extend: {
             boxShadow: {
-                box: '0 0 5px 3px rgba(0,0,0,0.1)',
+                box: '0 0 0px 1px rgba(0,0,0,0.2)',
+                'box-light': '0 0 0px 1px rgba(255,255,255,0.2)',
             },
             keyframes: {
                 show: {
@@ -35,5 +36,6 @@ export default {
             },
         },
     },
+    darkMode: ['class'],
     plugins: [],
 }

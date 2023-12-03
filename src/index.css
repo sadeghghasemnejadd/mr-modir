@@ -36,33 +36,13 @@
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-    @apply bg-primary-600;
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #e5e7eb;
-}
-
-::-webkit-scrollbar-vertical {
-    width: 12px;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-    @apply bg-primary-600;
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-track:vertical {
-    background-color: #e5e7eb;
+    @apply hidden;
 }
 
 @layer base {
     * {
+        @apply text-primary-950;
         @apply transition-colors;
+        @apply dark:text-primary-50;
     }
 }

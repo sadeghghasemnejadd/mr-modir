@@ -101,7 +101,7 @@ function DropBox({ children, name, size = 'md' }: IDropBoxProps) {
     if (openDropdownName !== name) return undefined
     return (
         <div
-            className={`absolute left-0 top-[150%] animate-show rounded-xl  px-6 py-6 shadow-box 
+            className={`dark:shadow-box-light absolute left-0 top-[150%] animate-show rounded-xl px-6 py-6 shadow-box dark:bg-slate-800
             ${size === 'md' ? 'w-96' : ''}
             ${size === 'sm' ? 'w-48' : ''}
             `}

@@ -5,9 +5,16 @@ import Default from './pages/Dashborads/Default'
 
 function App() {
     useEffect(() => {
-        const themeColor = localStorage.getItem('themeColor')
-        document.documentElement.className = ''
-        document.documentElement.classList.add(themeColor ?? 'theme-red')
+        const themeColorLocal = localStorage.getItem('themeColor')
+        const themeMode = localStorage.getItem('themeMode')
+        document.documentElement.classList.add(themeColorLocal ?? 'theme-red')
+        if (themeMode !== 'system' && themeMode) {
+            document.documentElement.classList.add(themeMode)
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+        } else if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('light')
+        }
     }, [])
     return (
         <BrowserRouter>
