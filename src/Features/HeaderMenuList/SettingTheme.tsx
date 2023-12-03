@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 import {
     PiGearFine,
-    PiPaintBucket,
     PiSun,
     PiMoon,
     PiChalkboardSimple,
+    PiPaintBrushLight,
 } from 'react-icons/pi'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
@@ -81,9 +81,9 @@ export default function SettingTheme() {
                 <HeaderDropdown.Thumbnail name="setting">
                     <div className="group relative">
                         <span className="[&>svg]:transition-all [&>svg]:duration-100  [&>svg]:group-hover:fill-primary-500">
-                            <PiPaintBucket size={30} />
+                            <PiPaintBrushLight size={30} />
                         </span>
-                        <span className=" absolute -bottom-2 -left-2 [&>svg]:transition-all [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
+                        <span className=" absolute -top-2 left-0 [&>svg]:transition-all [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
                             <PiGearFine id="gear" />
                         </span>
                     </div>
@@ -123,7 +123,7 @@ export default function SettingTheme() {
                                         key={mode.id}
                                         className={`group flex cursor-pointer items-center gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500 ${
                                             themeMode === mode.modeName
-                                                ? '[&>svg]:fill-primary-500 dark:[&>svg]:fill-primary-400'
+                                                ? '[&>svg]:fill-primary-500 '
                                                 : ''
                                         }`}
                                         onClick={() =>
@@ -135,7 +135,7 @@ export default function SettingTheme() {
                                         <p
                                             className={`group-hover:text-primary-500 ${
                                                 themeMode === mode.modeName
-                                                    ? 'text-primary-500 dark:text-primary-400'
+                                                    ? 'text-primary-500'
                                                     : ''
                                             }`}
                                         >
