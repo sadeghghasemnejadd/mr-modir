@@ -1,3 +1,4 @@
+import Activity from './Activity'
 import Notifications from './Notifications'
 import Profile from './Profile'
 import SettingTheme from './SettingTheme'
@@ -8,6 +9,7 @@ export default function HeaderMenuList() {
             <Profile />
             <Notifications />
             <SettingTheme />
+            <Activity />
         </ul>
     )
 }

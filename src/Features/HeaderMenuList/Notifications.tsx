@@ -1,5 +1,4 @@
 import { MouseEvent, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { PiBellSimple, PiEnvelopeOpen, PiX } from 'react-icons/pi'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
@@ -7,6 +6,7 @@ import notificationData from './notificitaionData'
 import LogoStatusEnum from '../../Enums/logoStatusEnum'
 import { getCalculatedDateAndTime } from '../../utils/calendar'
 import ReadStatusEnum from '../../Enums/ReadStatusEnum'
+import LinkButton from '../../ui/components/LinkButton'
 
 export default function Notifications() {
     const [notifications, setNotifications] = useState(notificationData)
@@ -118,12 +118,7 @@ export default function Notifications() {
                                     </li>
                                 ))}
                             </ul>
-                            <Link
-                                to="/"
-                                className="mt-3 block w-full rounded-lg py-3 text-center text-sm transition-all hover:bg-primary-100 hover:text-primary-500  dark:hover:bg-primary-800"
-                            >
-                                مشاهده همه پیام ها
-                            </Link>
+                            <LinkButton path="/">مشاهده همه پیام ها</LinkButton>
                         </>
                     )}
                 </HeaderDropdown.DropBox>
