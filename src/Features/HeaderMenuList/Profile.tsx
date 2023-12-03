@@ -85,7 +85,7 @@ export default function Profile() {
                         <img
                             src="images/avatars/001.png"
                             alt="avatar"
-                            className="h-12 w-12 rounded-full border border-red-900"
+                            className="h-12 w-12 rounded-full border border-primary-900"
                         />
                         <span className="absolute bottom-0 right-0 block h-3 w-3 animate-ping rounded-full border border-transparent bg-green-500 " />
                         <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full border border-transparent bg-green-600 " />
@@ -96,7 +96,7 @@ export default function Profile() {
                         <img
                             src="images/avatars/001.png"
                             alt="avatar"
-                            className="h-16 w-16 rounded-full border border-red-900"
+                            className="h-16 w-16 rounded-full border border-primary-900"
                         />
                         <div className="flex flex-col justify-between text-right ">
                             <div className="flex items-center gap-3">
@@ -113,11 +113,11 @@ export default function Profile() {
                         {profileUtilsList.map((profile) => (
                             <li
                                 key={profile.id}
-                                className=" group rounded-lg transition-all hover:bg-red-100"
+                                className=" group rounded-lg transition-all hover:bg-primary-100"
                             >
                                 <Link
                                     to={profile.route}
-                                    className="flex items-center gap-2 p-3 font-bold group-hover:text-red-700 [&>svg]:group-hover:stroke-red-600"
+                                    className="flex items-center gap-2 p-3 font-bold group-hover:text-primary-700 [&>svg]:group-hover:stroke-primary-600"
                                 >
                                     {profile.icon}
                                     {profile.name}
@@ -138,11 +138,11 @@ export default function Profile() {
                         {profileSettingList.map((profile) => (
                             <li
                                 key={profile.id}
-                                className=" group  rounded-lg transition-all hover:bg-red-100"
+                                className=" group  rounded-lg transition-all hover:bg-primary-100"
                             >
                                 <Link
                                     to={profile.route}
-                                    className="flex items-center gap-2 px-3 py-3 font-bold no-underline group-hover:text-red-700 [&>svg]:group-hover:fill-red-600"
+                                    className="flex items-center gap-2 px-3 py-3 font-bold no-underline group-hover:text-primary-700 [&>svg]:group-hover:fill-primary-600"
                                 >
                                     {profile.icon}
                                     {profile.name}

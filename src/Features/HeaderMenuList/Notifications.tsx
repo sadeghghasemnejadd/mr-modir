@@ -28,9 +28,9 @@ export default function Notifications() {
         <li>
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="notification">
-                    <div className=" group relative transition-all [&>svg]:hover:fill-red-600">
+                    <div className=" group relative transition-all [&>svg]:hover:fill-primary-600">
                         <PiBellSimple size="30" />
-                        <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs text-white group-hover:animate-bounce">
+                        <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary-600 text-xs text-primary-50 group-hover:animate-bounce">
                             {
                                 notifications.filter(
                                     (notif) =>
@@ -99,7 +99,7 @@ export default function Notifications() {
                                             </div>
                                             {notification.readStatus ===
                                                 ReadStatusEnum.unRead && (
-                                                <span className="absolute left-3 top-3  block h-2 w-2  rounded-full bg-red-500" />
+                                                <span className="absolute left-3 top-3  block h-2 w-2  rounded-full bg-primary-500" />
                                             )}
                                             <span
                                                 className="absolute left-2 top-10 hidden cursor-pointer transition-all group-hover:block"
@@ -120,7 +120,7 @@ export default function Notifications() {
                             </ul>
                             <Link
                                 to="/"
-                                className="mt-3 block w-full rounded-lg py-3 text-center text-sm transition-all hover:bg-red-100 hover:text-red-500"
+                                className="mt-3 block w-full rounded-lg py-3 text-center text-sm transition-all hover:bg-primary-100 hover:text-primary-500"
                             >
                                 مشاهده همه پیام ها
                             </Link>

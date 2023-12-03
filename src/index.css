@@ -1,4 +1,7 @@
 @import url('themes/red.css');
+@import url('themes/purple.css');
+@import url('themes/green.css');
+@import url('themes/blue.css');
 
 @tailwind base;
 @tailwind components;
@@ -37,7 +40,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-red-800;
+    @apply bg-primary-600;
     border-radius: 6px;
 }
 
@@ -50,10 +53,16 @@
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-    @apply bg-red-800;
+    @apply bg-primary-600;
     border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track:vertical {
     background-color: #e5e7eb;
+}
+
+@layer base {
+    * {
+        @apply transition-colors;
+    }
 }
