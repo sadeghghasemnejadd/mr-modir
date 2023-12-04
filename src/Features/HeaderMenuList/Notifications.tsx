@@ -86,7 +86,26 @@ export default function Notifications() {
                                                         LogoStatusEnum.successful
                                                             ? 'bg-green-500/30 dark:bg-green-900/30 [&>svg]:fill-green-700 dark:[&>svg]:fill-green-300'
                                                             : ''
-                                                    }`}
+                                                    }
+                                                    ${
+                                                        notification.logoStatus ===
+                                                        LogoStatusEnum.notify
+                                                            ? 'bg-blue-500/30 dark:bg-blue-900/30 [&>svg]:fill-blue-700 dark:[&>svg]:fill-blue-300'
+                                                            : ''
+                                                    }
+                                                    ${
+                                                        notification.logoStatus ===
+                                                        LogoStatusEnum.error
+                                                            ? 'bg-red-500/30 dark:bg-red-900/30 [&>svg]:fill-red-700 dark:[&>svg]:fill-red-300'
+                                                            : ''
+                                                    }
+                                                    ${
+                                                        notification.logoStatus ===
+                                                        LogoStatusEnum.warning
+                                                            ? 'bg-yellow-500/30 dark:bg-yellow-900/30 [&>svg]:fill-yellow-700 dark:[&>svg]:fill-yellow-300'
+                                                            : ''
+                                                    }
+                                                    `}
                                                 >
                                                     {notification.logo}
                                                 </span>

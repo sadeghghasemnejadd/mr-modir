@@ -60,5 +60,6 @@ module.exports = {
         'react/jsx-curly-newline': 0,
         'no-confusing-arrow': 0,
         'react/jsx-one-expression-per-line': 0,
+        'react/button-has-type': 0,
     },
 }

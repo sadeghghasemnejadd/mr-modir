@@ -79,4 +79,7 @@
     .border-activity {
         @apply border-[1px] border-dashed border-slate-700/50 dark:border-slate-100/50;
     }
+    .tooltip::after {
+        content: attr(data-content) !important;
+    }
 }
