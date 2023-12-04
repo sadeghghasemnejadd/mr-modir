@@ -11,13 +11,10 @@ export default function Tooltip({
     direction = TooltipDirectionEnum.top,
     text,
 }: ITooltipProps) {
+    const tooltipContent = `after:content-['${text.split(' ').join('_')}']`
     return (
         <div
-            className={`after:content-['${text
-                .split(' ')
-                .join(
-                    '_'
-                )}'] relative cursor-pointer after:invisible after:absolute after:min-w-max after:rounded-xl after:bg-slate-600 after:px-4 after:py-2 after:transition-all hover:after:visible
+            className={`${tooltipContent} relative cursor-pointer after:invisible after:absolute after:min-w-max after:rounded-xl after:bg-slate-600 after:px-4 after:py-2 after:transition-all hover:after:visible
                 ${
                     direction === TooltipDirectionEnum.top
                         ? 'after:-top-[calc(100%+20px)] after:translate-x-1/2'

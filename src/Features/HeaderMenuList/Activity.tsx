@@ -11,8 +11,10 @@ export default function Activity() {
         const activiyType = translateActivityType(activity.activityType)
         const date = getLocaleHours(activity.date)
         return (
-            <p className="flex-v-center gap-1 text-xs tracking-wider text-gray-400">
-                {activiyType} در {date} توسط{' '}
+            <div className="flex-v-center gap-1 text-xs tracking-wider text-gray-400">
+                <p>
+                    {activiyType} در {date} توسط{' '}
+                </p>
                 <Tooltip
                     text={activity.author}
                     direction={TooltipDirectionEnum.left}
@@ -23,7 +25,7 @@ export default function Activity() {
                         className="avatar h-6 w-6"
                     />
                 </Tooltip>
-            </p>
+            </div>
         )
     }
     return (
