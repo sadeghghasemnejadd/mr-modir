@@ -1,7 +1,31 @@
 import { PiClockCounterClockwise } from 'react-icons/pi'
 import Drawer from '../../ui/components/Drawer'
+import activityData, { IActivityData } from './data/activityData'
+import { translateActivityType } from '../../utils/translate'
+import { getLocaleHours } from '../../utils/calendar'
+import Tooltip from '../../ui/components/Tooltip'
+import TooltipDirectionEnum from '../../Enums/TooltipDiectionEnum'
 
 export default function Activity() {
+    const generateActivitySubTitle = (activity: IActivityData) => {
+        const activiyType = translateActivityType(activity.activityType)
+        const date = getLocaleHours(activity.date)
+        return (
+            <p className="flex-v-center gap-1 text-xs tracking-wider text-gray-400">
+                {activiyType} در {date} توسط{' '}
+                <Tooltip
+                    text={activity.author}
+                    direction={TooltipDirectionEnum.left}
+                >
+                    <img
+                        src={activity.avatar}
+                        alt={activity.author}
+                        className="avatar h-6 w-6"
+                    />
+                </Tooltip>
+            </p>
+        )
+    }
     return (
         <li>
             <Drawer direction="left">
@@ -18,82 +42,27 @@ export default function Activity() {
                         children: 'مشاهده همه فعالیت ها',
                     }}
                 >
-                    <div>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
-                        <p>hi</p>
+                    <div className="relative">
+                        <span className="border-activity absolute right-6 top-0 block h-full" />
+                        <div className="flex-cols gap-12">
+                            {activityData.map((activity) => (
+                                <div
+                                    key={activity.id}
+                                    className="flex justify-between gap-6"
+                                >
+                                    <span className="flex-center bg-main border-activity z-10 h-12 w-12 rounded-full [&>svg]:h-5 [&>svg]:w-5">
+                                        {activity.icon}
+                                    </span>
+                                    <div className="flex-cols flex-1 gap-3">
+                                        <h3 className="break-all font-bold">
+                                            {activity.title}
+                                        </h3>
+                                        {generateActivitySubTitle(activity)}
+                                        <div>{activity.content}</div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </Drawer.Box>
             </Drawer>

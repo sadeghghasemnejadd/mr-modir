@@ -59,5 +59,6 @@ module.exports = {
         'function-paren-newline': 0,
         'react/jsx-curly-newline': 0,
         'no-confusing-arrow': 0,
+        'react/jsx-one-expression-per-line': 0,
     },
 }

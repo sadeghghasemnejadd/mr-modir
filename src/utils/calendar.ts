@@ -31,4 +31,9 @@ export const getCalculatedDateAndTime = (date: Date): string => {
 
     return date.toLocaleDateString('fa-ir')
 }
-export const type = 'sadegh'
+export const getLocaleHours = (date: Date): string =>
+    new Intl.DateTimeFormat('fa-ir', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+    }).format(date)
