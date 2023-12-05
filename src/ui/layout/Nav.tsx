@@ -1,12 +1,9 @@
 import { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import CollapseNavbar from '../../Features/Navbar.tsx/CollapseNavbar'
+import CollapseNavbar from '../../Features/Navbar/CollapseNavbar'
 import IReduxStore from '../../Models/reduxStore'
-import {
-    collapseNav,
-    overlayNav,
-} from '../../Features/Navbar.tsx/navbarReducer'
-import UnCollapseNavbar from '../../Features/Navbar.tsx/UnCollapseNavbar'
+import { collapseNav, overlayNav } from '../../Features/Navbar/navbarReducer'
+import UnCollapseNavbar from '../../Features/Navbar/UnCollapseNavbar'
 
 export default function Nav() {
     const dispatch = useDispatch()

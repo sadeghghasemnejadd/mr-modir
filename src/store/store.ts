@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import navbarReducer from '../Features/Navbar.tsx/navbarReducer'
+import navbarReducer from '../Features/Navbar/navbarReducer'
 
 const store = configureStore({
     reducer: {

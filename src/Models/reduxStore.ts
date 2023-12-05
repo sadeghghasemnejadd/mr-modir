@@ -1,4 +1,4 @@
-import { INavbarState } from '../Features/Navbar.tsx/navbarReducer'
+import { INavbarState } from '../Features/Navbar/navbarReducer'
 
 interface IReduxStore {
     navbar: INavbarState
