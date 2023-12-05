@@ -37,7 +37,7 @@ export default function Notifications() {
                 <HeaderDropdown.Thumbnail name="notification">
                     <div className=" flex-center group relative transition-all [&>svg]:transition-none [&>svg]:hover:fill-primary-600 dark:[&>svg]:fill-primary-100 dark:[&>svg]:hover:fill-primary-500">
                         <PiBellSimple size="30" />
-                        <span className="flex-center absolute -right-0 -top-2 h-4 w-4  rounded-full bg-primary-600 text-xs text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950">
+                        <span className="flex-center absolute -right-0 -top-2 h-[18px] w-[18px]  rounded-full bg-primary-600 text-[11px] text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950">
                             {
                                 notifications.filter(
                                     (notif) =>

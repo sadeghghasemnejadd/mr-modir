@@ -18,17 +18,17 @@ export default function Badge({
       ${rounded ? 'rounded-full' : 'rounded-lg'}
       ${
           color === 'success'
-              ? ' bg-green-100 text-green-900 dark:bg-green-800 dark:text-green-100'
+              ? ' bg-green-300 text-green-900 dark:bg-green-800 dark:text-green-100'
               : ''
       }
       ${
           color === 'error'
-              ? ' bg-red-100 text-red-900 dark:bg-red-800 dark:text-red-100'
+              ? ' bg-red-300 text-red-900 dark:bg-red-800 dark:text-red-100'
               : ''
       }
       ${
           color === 'main'
-              ? ' bg-primary-100 text-primary-900 dark:bg-primary-800 dark:text-primary-100'
+              ? ' bg-primary-300 text-primary-900 dark:bg-primary-800 dark:text-primary-100'
               : ''
       }
       `}
