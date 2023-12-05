@@ -61,5 +61,6 @@ module.exports = {
         'no-confusing-arrow': 0,
         'react/jsx-one-expression-per-line': 0,
         'react/button-has-type': 0,
+        'no-param-reassign': 0,
     },
 }
