@@ -22,7 +22,6 @@ export default function UnCollapseNavbar({
         const isParentItem = itemHierarchy.split(':').length === 1
         const openedMenus = openedMenu.split(':')
         const isOpenedTarget = openedMenus.includes(menuItem.name)
-        console.log(itemHierarchy)
         if (isParentItem && isOpenedTarget) {
             setOpenedMenu('')
         } else if (isParentItem && !isOpenedTarget) {
