@@ -108,9 +108,9 @@ function Box({ children, name, title, footerButtonOption }: IBoxProps) {
                         : ''
                 }`}
             >
-                <div className="flex-rev-v-center mb-3 justify-between border-b-[1px] border-b-slate-900/10 pb-2 dark:border-b-slate-50/10">
+                <div className="flex-rev-v-center mb-3 justify-between border-b-[1px] border-b-stone-900/10 pb-2 dark:border-b-stone-50/10">
                     <span
-                        className={`flex-center shadow-main  cursor-pointer  rounded-full  p-2  hover:bg-gray-200 dark:hover:bg-slate-600 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
+                        className={`flex-center shadow-main  cursor-pointer  rounded-full  p-2  hover:bg-gray-200 dark:hover:bg-stone-600 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
                     `}
                         aria-hidden="true"
                         onClick={() => onOpenDrawer?.('')}
@@ -131,7 +131,7 @@ function Box({ children, name, title, footerButtonOption }: IBoxProps) {
             </div>
             {openedDrawer === name && (
                 <div
-                    className="fixed left-0 top-0 z-40 h-screen w-screen animate-show bg-slate-300/50 backdrop-blur-[1px] dark:bg-slate-800/60"
+                    className="fixed left-0 top-0 z-40 h-screen w-screen animate-show bg-stone-300/50 backdrop-blur-[1px] dark:bg-stone-800/60"
                     onClick={() => onOpenDrawer?.('')}
                     aria-hidden="true"
                 />

@@ -13,7 +13,7 @@ export default function Tooltip({
 }: ITooltipProps) {
     return (
         <div
-            className={`tooltip relative cursor-pointer after:invisible after:absolute after:min-w-max after:rounded-xl after:bg-gray-200 after:px-4 after:py-2 after:transition-all hover:after:visible dark:after:bg-slate-600 
+            className={`tooltip relative cursor-pointer after:invisible after:absolute after:min-w-max after:rounded-xl after:bg-gray-200 after:px-4 after:py-2 after:transition-all hover:after:visible dark:after:bg-stone-600 
                 ${
                     direction === TooltipDirectionEnum.top
                         ? 'after:-top-[calc(100%+20px)] after:translate-x-1/2'

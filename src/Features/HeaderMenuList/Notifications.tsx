@@ -76,7 +76,7 @@ export default function Notifications() {
                                                 <img
                                                     src={notification.avatar}
                                                     alt={notification.title}
-                                                    className="size-12 rounded-full dark:bg-slate-500"
+                                                    className="size-12 rounded-full dark:bg-stone-500"
                                                 />
                                             )}
                                             {notification.logo && (

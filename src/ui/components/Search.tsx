@@ -17,7 +17,7 @@ export default function Search({
 }: ISarchProps) {
     return (
         <div
-            className={`relative [&>svg]:absolute [&>svg]:right-2 [&>svg]:top-1/2 [&>svg]:-translate-y-1/2 [&>svg]:fill-slate-100 dark:[&>svg]:fill-slate-800 ${containerClassNames}`}
+            className={`relative [&>svg]:absolute [&>svg]:right-2 [&>svg]:top-1/2 [&>svg]:-translate-y-1/2 [&>svg]:fill-stone-800 dark:[&>svg]:fill-stone-100 ${containerClassNames}`}
         >
             <IoIosSearch />
             <input
