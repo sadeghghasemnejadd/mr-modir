@@ -62,5 +62,6 @@ module.exports = {
         'react/jsx-one-expression-per-line': 0,
         'react/button-has-type': 0,
         'no-param-reassign': 0,
+        'arrow-body-style': 0,
     },
 }

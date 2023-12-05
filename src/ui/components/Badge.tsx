@@ -1,8 +1,8 @@
 interface IBadgeProps {
     text: string | number
-    color?: 'success' | 'error'
+    color?: 'success' | 'error' | 'main'
     rounded?: boolean
-    size?: 'sm' | 'md'
+    size?: 'sm' | 'md' | 'xs'
 }
 export default function Badge({
     text,
@@ -14,6 +14,7 @@ export default function Badge({
         <div
             className={`border px-3 py-1 font-bold
       ${size === 'sm' ? 'text-sm' : ''}
+      ${size === 'xs' ? 'text-xs' : ''}
       ${rounded ? 'rounded-full' : 'rounded-lg'}
       ${
           color === 'success'
@@ -24,7 +25,13 @@ export default function Badge({
           color === 'error'
               ? ' bg-red-100 text-red-900 dark:bg-red-800 dark:text-red-100'
               : ''
-      }`}
+      }
+      ${
+          color === 'main'
+              ? ' bg-primary-100 text-primary-900 dark:bg-primary-800 dark:text-primary-100'
+              : ''
+      }
+      `}
         >
             <p>{text}</p>
         </div>
