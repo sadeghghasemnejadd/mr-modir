@@ -87,7 +87,7 @@ function Thumbnail({ children, name }: IThumbnailProps) {
         <div
             onClick={handleClickThumbnail}
             aria-hidden="true"
-            className="flex-center cursor-pointer"
+            className="flex-center h-12 cursor-pointer"
         >
             {children}
         </div>

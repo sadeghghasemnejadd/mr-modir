@@ -12,9 +12,14 @@ export default {
                     '0%': { opacity: 0 },
                     '100%': { opacity: 1 },
                 },
+                'show-height': {
+                    '0%': { maxHeight: 0 },
+                    '100%': { maxHeight: '500px' },
+                },
             },
             animation: {
                 show: 'show 0.1s ease-in-out',
+                'show-height': 'show-height 1s ease-in-out forwards',
             },
             fontFamily: {
                 sans: 'iransansfa',

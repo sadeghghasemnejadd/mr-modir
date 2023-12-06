@@ -14,7 +14,7 @@ const navbarItems: INavBarItems[] = [
         name: 'dashboard',
         label: 'داشبورد ها',
         icon: <PiHouse />,
-        badge: 5,
+        // badge: 5,
         children: [
             {
                 name: 'default',
@@ -27,7 +27,13 @@ const navbarItems: INavBarItems[] = [
                             {
                                 name: 'default3',
                                 label: '3ساده',
-                                route: '/',
+                                children: [
+                                    {
+                                        name: 'default4',
+                                        label: '3ساده',
+                                        route: '/',
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -49,19 +55,6 @@ const navbarItems: INavBarItems[] = [
                         ],
                     },
                 ],
-            },
-        ],
-    },
-    {
-        name: 'pages',
-        label: 'داشبورد ها',
-        icon: <PiHouse />,
-        badge: 5,
-        children: [
-            {
-                name: 'default4',
-                label: 'ساده',
-                route: '/',
             },
         ],
     },

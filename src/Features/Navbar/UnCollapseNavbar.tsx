@@ -37,53 +37,68 @@ export default function UnCollapseNavbar({
     const generateMenus = (items: INavBarItems[]) => {
         const openedMenus = openedMenu ? openedMenu.split(':') : []
         return (
-            <ul className="flex-cols gap-2">
+            <ul className="flex-cols transition-all">
                 {items.map((item) => {
+                    const isActive = openedMenus.includes(item.name)
                     return (
-                        <li key={item.name} className="flex-cols gap-2">
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-1 text-sm">
-                                    {!!item.icon && (
-                                        <span className="[&>svg]:h-5 [&>svg]:w-5">
-                                            {item.icon}
-                                        </span>
-                                    )}
-                                    {!!item.icon || (
-                                        <span className="h-1.5 w-1.5 rounded-full border border-stone-950" />
-                                    )}
-                                    <p>{item.label}</p>
-                                </div>
-                                {item.children && (
-                                    <div className="flex items-center gap-2">
-                                        {item.badge && (
-                                            <Badge
-                                                text={item.badge}
-                                                rounded
-                                                size="xs"
-                                                color="main"
-                                            />
+                        <>
+                            <li
+                                key={item.name}
+                                className="flex-cols group cursor-pointer gap-2 "
+                                aria-hidden="true"
+                                onClick={() => handleOpenMenu(item)}
+                            >
+                                <div className="flex justify-between">
+                                    <div className="flex items-center gap-2 text-sm">
+                                        {!!item.icon && (
+                                            <span className="[&>svg]:h-5 [&>svg]:w-5 [&>svg]:duration-0 group-hover:[&>svg]:fill-primary-600">
+                                                {item.icon}
+                                            </span>
                                         )}
-                                        <span
-                                            className={`flex-center h-4 w-4 cursor-pointer rounded-full bg-stone-200 p-[1px] [&>svg]:transition-all [&>svg]:duration-500 ${
-                                                openedMenu
-                                                    .split(':')
-                                                    .includes(item.name)
-                                                    ? '[&>svg]:-rotate-90'
-                                                    : ''
-                                            }`}
-                                            aria-hidden="true"
-                                            onClick={() => handleOpenMenu(item)}
-                                        >
-                                            <PiCaretLeft />
-                                        </span>
+                                        {!!item.icon || (
+                                            <div className="flex h-5 w-5 items-center justify-end">
+                                                <span className="h-1 w-1 rounded-full border border-stone-950 bg-stone-950" />
+                                            </div>
+                                        )}
+                                        <p className="group-hover:text-primary-600">
+                                            {item.label}
+                                        </p>
                                     </div>
-                                )}
-                            </div>
-                            {item.children &&
-                                !!openedMenus.length &&
-                                openedMenus.includes(item.name) &&
-                                generateMenus(item.children)}
-                        </li>
+                                    {item.children && (
+                                        <div className="flex items-center gap-2">
+                                            {item.badge && (
+                                                <Badge
+                                                    text={item.badge}
+                                                    rounded
+                                                    size="xs"
+                                                    color="main"
+                                                />
+                                            )}
+                                            <span
+                                                className={`cursor-pointer rounded-full [&>svg]:h-3 [&>svg]:w-3 [&>svg]:transition-all [&>svg]:duration-300 ${
+                                                    openedMenu
+                                                        .split(':')
+                                                        .includes(item.name)
+                                                        ? '[&>svg]:-rotate-90'
+                                                        : ''
+                                                }`}
+                                            >
+                                                <PiCaretLeft />
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
+                            </li>
+                            {item.children && (
+                                <div
+                                    className={`menu-item ${
+                                        isActive ? 'menu-item-active' : ''
+                                    }`}
+                                >
+                                    {generateMenus(item.children)}
+                                </div>
+                            )}
+                        </>
                     )
                 })}
             </ul>

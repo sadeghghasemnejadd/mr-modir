@@ -82,4 +82,14 @@
     .tooltip::after {
         content: attr(data-content) !important;
     }
+    .menu-item {
+        @apply max-h-0 overflow-hidden;
+        transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        overflow: hidden;
+    }
+    .menu-item-active {
+        @apply max-h-[650em];
+        transition: max-height 2s ease-in-out;
+        /* animation: name duration forwards delay iteration-count direction fill-mode; */
+    }
 }
