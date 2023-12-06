@@ -1,21 +1,11 @@
 import { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import {
-    TbUserCheck,
-    TbSettings,
-    TbCreditCard,
-    TbCalendarCheck,
-} from 'react-icons/tb'
 
-import {
-    PiSignOut,
-    PiCurrencyDollarSimpleLight,
-    PiQuestionThin,
-} from 'react-icons/pi'
 import RolesEnum from '../../Enums/RolesEnum'
 import Badge from '../../ui/components/Badge'
 import Divider from '../../ui/components/Divider'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
+import Icons from '../../icons/Icons'
 
 interface IProfileUtilsList {
     id: number
@@ -29,13 +19,13 @@ const profileUtilsList: IProfileUtilsList[] = [
     {
         id: 0,
         name: 'پروفایل من',
-        icon: <TbUserCheck size={20} color="868e96" />,
+        icon: <Icons name="user" size={20} />,
         route: '/',
     },
     {
         id: 1,
         name: 'پروژه های من',
-        icon: <TbCalendarCheck size={20} color="868e96" />,
+        icon: <Icons name="clipboard-list-check" size={20} />,
         route: '/',
         badge: '5',
         badgeColor: 'success',
@@ -43,13 +33,13 @@ const profileUtilsList: IProfileUtilsList[] = [
     {
         id: 2,
         name: 'تنظیمات',
-        icon: <TbSettings size={20} color="868e96" />,
+        icon: <Icons name="gear" size={20} />,
         route: '/',
     },
     {
         id: 3,
         name: 'پرداخت',
-        icon: <TbCreditCard size={20} color="868e96" />,
+        icon: <Icons name="credit-card" size={20} />,
         route: '/',
         badge: '2',
         badgeColor: 'error',
@@ -59,19 +49,19 @@ const profileSettingList: IProfileUtilsList[] = [
     {
         id: 0,
         name: 'سوالات متداول',
-        icon: <PiQuestionThin size={20} color="868e96" />,
+        icon: <Icons name="circle-question" size={20} />,
         route: '/',
     },
     {
         id: 1,
         name: 'قیمت گذاری',
-        icon: <PiCurrencyDollarSimpleLight size={20} color="868e96" />,
+        icon: <Icons name="dollar-sign" size={20} />,
         route: '/',
     },
     {
         id: 2,
         name: 'خروج',
-        icon: <PiSignOut size={20} color="868e96" />,
+        icon: <Icons name="arrow-right-from-bracket" size={20} />,
         route: '/',
     },
 ]
@@ -117,7 +107,7 @@ export default function Profile() {
                             >
                                 <Link
                                     to={profile.route}
-                                    className="flex-v-center gap-2 p-3 font-bold group-hover:text-primary-700 dark:group-hover:text-primary-100 [&>svg]:group-hover:stroke-primary-600 dark:[&>svg]:group-hover:stroke-primary-100"
+                                    className="[&>svg]:profile-icon flex-v-center gap-2 p-3 font-bold group-hover:text-primary-700 dark:group-hover:text-primary-100 [&>svg]:group-hover:fill-primary-600 dark:[&>svg]:group-hover:fill-primary-100"
                                 >
                                     {profile.icon}
                                     {profile.name}

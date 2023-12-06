@@ -1,16 +1,10 @@
 import { ReactNode } from 'react'
-import {
-    PiGearFine,
-    PiSun,
-    PiMoon,
-    PiChalkboardSimple,
-    PiPaintBrushLight,
-} from 'react-icons/pi'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
 import ThemeColorEnum from '../../Enums/ThemeColorEnum'
 import useTheme from '../../hooks/useTheme'
 import ThemeModeEnum from '../../Enums/ThemeModeEnum'
+import Icons from '../../icons/Icons'
 
 interface IColorData {
     id: number
@@ -50,19 +44,19 @@ const modeData: IModeData[] = [
         id: 0,
         name: 'روشن',
         modeName: ThemeModeEnum.light,
-        icon: <PiSun size={20} />,
+        icon: <Icons name="brightness" size={20} />,
     },
     {
         id: 1,
         name: 'تیره',
         modeName: ThemeModeEnum.dark,
-        icon: <PiMoon size={20} />,
+        icon: <Icons name="moon" size={20} />,
     },
     {
         id: 2,
         name: 'سیستم',
         modeName: ThemeModeEnum.system,
-        icon: <PiChalkboardSimple size={20} />,
+        icon: <Icons name="laptop" size={20} />,
     },
 ]
 export default function SettingTheme() {
@@ -81,10 +75,10 @@ export default function SettingTheme() {
                 <HeaderDropdown.Thumbnail name="setting">
                     <div className="flex-center group relative">
                         <span className="svg-duration-100 [&>svg]:group-hover:fill-primary-500">
-                            <PiPaintBrushLight size={30} />
+                            <Icons name="paintbrush" size={30} />
                         </span>
                         <span className=" svg-duration-100 absolute -top-2 left-0 [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
-                            <PiGearFine id="gear" />
+                            <Icons name="gear" size={16} />
                         </span>
                     </div>
                 </HeaderDropdown.Thumbnail>

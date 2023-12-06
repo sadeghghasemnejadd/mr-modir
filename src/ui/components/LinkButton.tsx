@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { PiCaretLeft } from 'react-icons/pi'
+import Icons from '../../icons/Icons'
 
 interface ILinkButtonProps {
     path: string
@@ -14,7 +14,7 @@ export default function LinkButton({ path, children }: ILinkButtonProps) {
         >
             {children}
             <span className="[&>svg]:fill-primary-400 [&>svg]:transition-none dark:[&>svg]:group-hover:fill-primary-50">
-                <PiCaretLeft size={15} />
+                <Icons name="angle-left" size={15} />
             </span>
         </Link>
     )

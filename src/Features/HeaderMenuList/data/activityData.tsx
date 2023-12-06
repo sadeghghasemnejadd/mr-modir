@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
-import { PiBook, PiChatCenteredDots, PiUser } from 'react-icons/pi'
 import ActivityTypeEnum from '../../../Enums/ActivityTypeEnum'
 import Button from '../../../ui/components/Button'
+import Icons from '../../../icons/Icons'
 
 export interface IActivityData {
     id: number
@@ -16,7 +16,7 @@ export interface IActivityData {
 const activityData: IActivityData[] = [
     {
         id: 0,
-        icon: <PiChatCenteredDots />,
+        icon: <Icons name="messages" />,
         title: 'ارسال چند سفارش به شیراز',
         author: 'صادق قاسم نژاد',
         avatar: 'images/avatars/001.png',
@@ -33,7 +33,7 @@ const activityData: IActivityData[] = [
     },
     {
         id: 1,
-        icon: <PiUser />,
+        icon: <Icons name="user" />,
         title: 'دو کاربر جدید ثبت نام کردند',
         author: 'مهسا امینی',
         avatar: 'images/avatars/007.png',
@@ -62,7 +62,7 @@ const activityData: IActivityData[] = [
     },
     {
         id: 2,
-        icon: <PiBook />,
+        icon: <Icons name="notebook" />,
         title: 'پروژه آقای مدیر انجام شده',
         author: 'امیرحسین لدنی',
         avatar: 'images/avatars/010.png',

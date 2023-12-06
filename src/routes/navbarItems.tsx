@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { PiHouse } from 'react-icons/pi'
+import Icons from '../icons/Icons'
 
 export interface INavBarItems {
     name: string
@@ -13,7 +13,7 @@ const navbarItems: INavBarItems[] = [
     {
         name: 'dashboard',
         label: 'داشبورد ها',
-        icon: <PiHouse />,
+        icon: <Icons name="rectangles-mixed" />,
         // badge: 5,
         children: [
             {

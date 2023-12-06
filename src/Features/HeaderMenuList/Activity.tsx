@@ -1,19 +1,19 @@
-import { PiClockCounterClockwise } from 'react-icons/pi'
 import Drawer from '../../ui/components/Drawer'
 import activityData, { IActivityData } from './data/activityData'
 import { translateActivityType } from '../../utils/translate'
 import { getLocaleHours } from '../../utils/calendar'
 import Tooltip from '../../ui/components/Tooltip'
 import TooltipDirectionEnum from '../../Enums/TooltipDiectionEnum'
+import Icons from '../../icons/Icons'
 
 export default function Activity() {
     const generateActivitySubTitle = (activity: IActivityData) => {
-        const activiyType = translateActivityType(activity.activityType)
+        const activityType = translateActivityType(activity.activityType)
         const date = getLocaleHours(activity.date)
         return (
             <div className="flex-v-center gap-1 text-xs tracking-wider text-gray-400">
                 <p>
-                    {activiyType} در {date} توسط{' '}
+                    {activityType} در {date} توسط{' '}
                 </p>
                 <Tooltip
                     text={activity.author}
@@ -33,7 +33,7 @@ export default function Activity() {
             <Drawer direction="left">
                 <Drawer.Thumbnail name="activity">
                     <span className="flex-center svg-duration-100 [&>svg]:hover:fill-primary-500">
-                        <PiClockCounterClockwise size={30} />
+                        <Icons name="clock-rotate-left" size={30} />
                     </span>
                 </Drawer.Thumbnail>
                 <Drawer.Box

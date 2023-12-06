@@ -1,8 +1,7 @@
 import { ReactNode } from 'react'
-import { PiConfettiBold, PiWarning, PiWarningCircle } from 'react-icons/pi'
-import { BsExclamation } from 'react-icons/bs'
 import ReadStatusEnum from '../../../Enums/ReadStatusEnum'
 import LogoStatusEnum from '../../../Enums/logoStatusEnum'
+import Icons from '../../../icons/Icons'
 
 interface INotificationData {
     id: number
@@ -26,7 +25,7 @@ const notificationData: INotificationData[] = [
     },
     {
         id: 1,
-        logo: <PiConfettiBold />,
+        logo: <Icons name="party-horn" />,
         title: 'سفارش جدید!',
         message: 'سما پروژه جدیدی از طرف مهسا امینی دریافت کرده اید!.',
         readStatus: ReadStatusEnum.unRead,
@@ -52,7 +51,7 @@ const notificationData: INotificationData[] = [
     },
     {
         id: 4,
-        logo: <PiWarning />,
+        logo: <Icons name="triangle-exclamation" />,
         title: 'به روز رسانی سیستم',
         message:
             'سلام، ما به روز رسانی جدیدی از سیستم ایجاد کرده‌ایم. لطفاً از تغییرات جدید مطلع شده و نظرات خود را با ما در میان بگذارید',
@@ -62,7 +61,7 @@ const notificationData: INotificationData[] = [
     },
     {
         id: 5,
-        logo: <BsExclamation />,
+        logo: <Icons name="exclamation" />,
         title: 'تعطیلی دفتر در روزهای آتی',
         message:
             'با سلام، به اطلاع می‌رسانیم که دفتر ما در روزهای ۱۵ و ۱۶ اسفند به دلیل تعطیلات عید نوروز تعطیل می‌باشد. با تشکر از درک شما',
@@ -72,7 +71,7 @@ const notificationData: INotificationData[] = [
     },
     {
         id: 6,
-        logo: <PiWarningCircle />,
+        logo: <Icons name="hexagon-exclamation" />,
         title: 'اخطار! سامانه به خطر افتاده است',
         message:
             'لطفاً توجه داشته باشید که سامانه در معرض خطر قرار گرفته است. لطفاً به طور فوری تغییرات لازم را انجام دهید تا مشکلات بیشتری به وجود نیاید.',

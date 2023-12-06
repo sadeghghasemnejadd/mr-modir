@@ -1,5 +1,4 @@
 import { MouseEvent, useState } from 'react'
-import { PiBellSimple, PiEnvelopeOpen, PiX } from 'react-icons/pi'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
 import notificationData from './data/notificitaionData'
@@ -7,6 +6,7 @@ import LogoStatusEnum from '../../Enums/logoStatusEnum'
 import { getCalculatedDateAndTime } from '../../utils/calendar'
 import ReadStatusEnum from '../../Enums/ReadStatusEnum'
 import LinkButton from '../../ui/components/LinkButton'
+import Icons from '../../icons/Icons'
 
 export default function Notifications() {
     const [notifications, setNotifications] = useState(() => {
@@ -36,7 +36,8 @@ export default function Notifications() {
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="notification">
                     <div className=" flex-center group relative transition-all [&>svg]:transition-none [&>svg]:hover:fill-primary-600 dark:[&>svg]:fill-primary-100 dark:[&>svg]:hover:fill-primary-500">
-                        <PiBellSimple size="30" />
+                        <Icons name="bell" size={30} />
+
                         <span className="flex-center absolute -right-0 -top-2 h-[18px] w-[18px]  rounded-full bg-primary-600 text-[11px] text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950">
                             {
                                 notifications.filter(
@@ -50,7 +51,7 @@ export default function Notifications() {
                 </HeaderDropdown.Thumbnail>
                 <HeaderDropdown.DropBox name="notification">
                     <div className="flex-v-center justify-between  dark:[&>svg]:fill-primary-50">
-                        <PiEnvelopeOpen size="30" />
+                        <Icons name="envelope-open-text" size={30} />
                         <p>پیام ها</p>
                     </div>
                     <Divider />
@@ -137,7 +138,7 @@ export default function Notifications() {
                                                 }
                                                 aria-hidden="true"
                                             >
-                                                <PiX />
+                                                <Icons name="xmark" size={20} />
                                             </span>
                                         </div>
                                         <Divider />

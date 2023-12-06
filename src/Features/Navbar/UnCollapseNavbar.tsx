@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { PiCaretLeft, PiCaretDoubleRight } from 'react-icons/pi'
 import IReduxStore from '../../Models/reduxStore'
 import Divider from '../../ui/components/Divider'
 import navbarItems, { INavBarItems } from '../../routes/navbarItems'
 import Badge from '../../ui/components/Badge'
 import findAndCreateHierarchy from '../../utils/createHierarchy'
+import Icons from '../../icons/Icons'
 
 interface IUnCollapseNavbarProps {
     handleClickCollpaseNav: (isOver: boolean) => void
@@ -37,58 +37,58 @@ export default function UnCollapseNavbar({
     const generateMenus = (items: INavBarItems[]) => {
         const openedMenus = openedMenu ? openedMenu.split(':') : []
         return (
-            <ul className="flex-cols transition-all">
+            <ul className="flex-cols mb-0.5 transition-all">
                 {items.map((item) => {
                     const isActive = openedMenus.includes(item.name)
                     return (
-                        <>
-                            <li
-                                key={item.name}
-                                className="flex-cols group cursor-pointer gap-2 "
+                        <li
+                            key={item.name}
+                            className="flex-cols cursor-pointer gap-2 "
+                        >
+                            <div
+                                className="group flex justify-between"
                                 aria-hidden="true"
                                 onClick={() => handleOpenMenu(item)}
                             >
-                                <div className="flex justify-between">
-                                    <div className="flex items-center gap-2 text-sm">
-                                        {!!item.icon && (
-                                            <span className="[&>svg]:h-5 [&>svg]:w-5 [&>svg]:duration-0 group-hover:[&>svg]:fill-primary-600">
-                                                {item.icon}
-                                            </span>
-                                        )}
-                                        {!!item.icon || (
-                                            <div className="flex h-5 w-5 items-center justify-end">
-                                                <span className="h-1 w-1 rounded-full border border-stone-950 bg-stone-950" />
-                                            </div>
-                                        )}
-                                        <p className="group-hover:text-primary-600">
-                                            {item.label}
-                                        </p>
-                                    </div>
-                                    {item.children && (
-                                        <div className="flex items-center gap-2">
-                                            {item.badge && (
-                                                <Badge
-                                                    text={item.badge}
-                                                    rounded
-                                                    size="xs"
-                                                    color="main"
-                                                />
-                                            )}
-                                            <span
-                                                className={`cursor-pointer rounded-full [&>svg]:h-3 [&>svg]:w-3 [&>svg]:transition-all [&>svg]:duration-300 ${
-                                                    openedMenu
-                                                        .split(':')
-                                                        .includes(item.name)
-                                                        ? '[&>svg]:-rotate-90'
-                                                        : ''
-                                                }`}
-                                            >
-                                                <PiCaretLeft />
-                                            </span>
+                                <div className="flex items-center gap-2 text-sm">
+                                    {!!item.icon && (
+                                        <span className="[&>svg]:h-5 [&>svg]:w-5 [&>svg]:duration-0 group-hover:[&>svg]:fill-primary-600">
+                                            {item.icon}
+                                        </span>
+                                    )}
+                                    {!!item.icon || (
+                                        <div className="flex h-5 w-5 items-center justify-end">
+                                            <span className="h-1 w-1 rounded-full border border-stone-950 bg-stone-950" />
                                         </div>
                                     )}
+                                    <p className="group-hover:text-primary-600">
+                                        {item.label}
+                                    </p>
                                 </div>
-                            </li>
+                                {item.children && (
+                                    <div className="flex items-center gap-2">
+                                        {item.badge && (
+                                            <Badge
+                                                text={item.badge}
+                                                rounded
+                                                size="xs"
+                                                color="main"
+                                            />
+                                        )}
+                                        <span
+                                            className={`cursor-pointer rounded-full [&>svg]:h-3 [&>svg]:w-3 [&>svg]:transition-all [&>svg]:duration-300 ${
+                                                openedMenu
+                                                    .split(':')
+                                                    .includes(item.name)
+                                                    ? '[&>svg]:-rotate-90'
+                                                    : ''
+                                            }`}
+                                        >
+                                            <Icons name="angle-left" />
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
                             {item.children && (
                                 <div
                                     className={`menu-item ${
@@ -98,7 +98,7 @@ export default function UnCollapseNavbar({
                                     {generateMenus(item.children)}
                                 </div>
                             )}
-                        </>
+                        </li>
                     )
                 })}
             </ul>
@@ -123,7 +123,7 @@ export default function UnCollapseNavbar({
                     onClick={() => handleClickCollpaseNav(!!isOverlay)}
                     aria-hidden="true"
                 >
-                    <PiCaretDoubleRight />
+                    <Icons name="angles-right" />
                 </span>
             </div>
             <Divider />

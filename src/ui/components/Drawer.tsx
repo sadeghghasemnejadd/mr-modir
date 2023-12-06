@@ -7,10 +7,10 @@ import {
     useEffect,
     useRef,
 } from 'react'
-import { PiX } from 'react-icons/pi'
 import clickOutside from '../../utils/clickOutSide'
 import Divider from './Divider'
 import LinkButton from './LinkButton'
+import Icons from '../../icons/Icons'
 
 interface IDrawerContextValue {
     openedDrawer?: string
@@ -115,7 +115,7 @@ function Box({ children, name, title, footerButtonOption }: IBoxProps) {
                         aria-hidden="true"
                         onClick={() => onOpenDrawer?.('')}
                     >
-                        <PiX size={20} />
+                        <Icons name="xmark" size={20} />
                     </span>
                     {title && <h3>{title}</h3>}
                 </div>
