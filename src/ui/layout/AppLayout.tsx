@@ -11,7 +11,7 @@ export default function AppLayout() {
     return (
         <div
             className={`grid max-h-screen min-h-screen grid-cols-[300px_1fr] grid-rows-[75px_1fr] gap-6 overflow-hidden ${
-                isOverlay ? ' mr-auto w-[calc(100%-7.5rem)] grid-cols-1' : ''
+                isOverlay ? 'mr-auto w-[calc(100%-7.5rem)] grid-cols-[1fr]' : ''
             }`}
         >
             <Header />

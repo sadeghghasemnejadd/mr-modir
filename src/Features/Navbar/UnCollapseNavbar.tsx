@@ -37,7 +37,7 @@ export default function UnCollapseNavbar({
     const generateMenus = (items: INavBarItems[]) => {
         const openedMenus = openedMenu ? openedMenu.split(':') : []
         return (
-            <ul className="flex-cols mb-0.5 transition-all">
+            <ul className="flex-cols mb-0.5 gap-2 transition-all">
                 {items.map((item) => {
                     const isActive = openedMenus.includes(item.name)
                     return (
@@ -52,13 +52,13 @@ export default function UnCollapseNavbar({
                             >
                                 <div className="flex items-center gap-2 text-sm">
                                     {!!item.icon && (
-                                        <span className="[&>svg]:h-5 [&>svg]:w-5 [&>svg]:duration-0 group-hover:[&>svg]:fill-primary-600">
-                                            {item.icon}
+                                        <span className="[&>svg]:h-6 [&>svg]:w-6 [&>svg]:duration-0 group-hover:[&>svg]:fill-primary-600">
+                                            <Icons name={item.icon} />
                                         </span>
                                     )}
                                     {!!item.icon || (
                                         <div className="flex h-5 w-5 items-center justify-end">
-                                            <span className="h-1 w-1 rounded-full border border-stone-950 bg-stone-950" />
+                                            <span className="h-1 w-1 rounded-full border border-stone-950 bg-stone-950 group-hover:border-primary-600 group-hover:bg-primary-600" />
                                         </div>
                                     )}
                                     <p className="group-hover:text-primary-600">
