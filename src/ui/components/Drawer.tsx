@@ -108,7 +108,7 @@ function Box({
     return (
         <>
             <div
-                className={`bg-main shadow-main fixed top-0  z-50 flex h-screen w-[80%] flex-col px-3 py-3 transition-all duration-300 md:w-[50%] md:px-6 lg:w-[30%] 
+                className={`bg-main shadow-main fixed top-0  z-50 flex h-screen w-[80%] flex-col px-3 py-3 transition-all duration-300 md:w-[50%] md:px-6 xl:w-[30%] 2xl:w-[20%] 
                 ${direction === 'right' ? 'right-0 translate-x-full' : ''}
                 ${direction === 'left' ? 'left-0 -translate-x-full' : ''}
                 ${
