@@ -126,6 +126,6 @@
         transition: max-height 2s ease-in-out;
     }
     .text-base-res {
-        @apply text-sm md:text-base;
+        @apply text-sm xl:text-base;
     }
 }

@@ -63,5 +63,6 @@ module.exports = {
         'react/button-has-type': 0,
         'no-param-reassign': 0,
         'arrow-body-style': 0,
+        'no-nested-ternary': 0,
     },
 }

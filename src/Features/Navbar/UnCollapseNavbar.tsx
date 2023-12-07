@@ -8,11 +8,15 @@ import findAndCreateHierarchy from '../../utils/createHierarchy'
 import Icons from '../../icons/Icons'
 
 interface IUnCollapseNavbarProps {
-    handleClickCollpaseNav: (isOver: boolean) => void
+    handleClickCollpaseNav?: (isOver: boolean) => void
+    onClick?: () => void
+    isResponsive?: boolean
 }
 
 export default function UnCollapseNavbar({
     handleClickCollpaseNav,
+    onClick,
+    isResponsive = false,
 }: IUnCollapseNavbarProps) {
     const { isOverlay } = useSelector((state: IReduxStore) => state.navbar)
     const [openedMenu, setOpenedMenu] = useState<string>('')
@@ -120,10 +124,13 @@ export default function UnCollapseNavbar({
                     className={`cursor-pointer transition-all duration-500 ${
                         isOverlay ? '-rotate-180' : ''
                     }`}
-                    onClick={() => handleClickCollpaseNav(!!isOverlay)}
+                    onClick={() => {
+                        handleClickCollpaseNav?.(!!isOverlay)
+                        onClick?.()
+                    }}
                     aria-hidden="true"
                 >
-                    <Icons name="angles-right" />
+                    <Icons name={isResponsive ? 'xmark' : 'angles-right'} />
                 </span>
             </div>
             <Divider />

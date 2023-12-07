@@ -6,6 +6,8 @@ import {
     useContext,
     useEffect,
     useRef,
+    cloneElement,
+    ReactElement,
 } from 'react'
 import clickOutside from '../../utils/clickOutSide'
 import Divider from './Divider'
@@ -31,10 +33,11 @@ interface IThumbnailProps {
     classNames?: string
 }
 interface IBoxProps {
-    children: ReactNode
+    children: ReactElement
     name: string
     title?: string
     footerButtonOption?: IFooterButtonOption
+    hasHeader?: boolean
 }
 const DrawerContext = createContext<IDrawerContextValue>({})
 
@@ -92,34 +95,49 @@ function Thumbnail({ children, name, classNames }: IThumbnailProps) {
     )
 }
 
-function Box({ children, name, title, footerButtonOption }: IBoxProps) {
+function Box({
+    children,
+    name,
+    title,
+    footerButtonOption,
+    hasHeader = true,
+}: IBoxProps) {
     const { openedDrawer, direction, onOpenDrawer } = useContext(DrawerContext)
 
     const isOpened: boolean = openedDrawer === name
     return (
         <>
             <div
-                className={`bg-main shadow-main fixed top-0  z-50 flex h-screen w-[80%] flex-col px-3 py-3 transition-all duration-300 md:w-[30%] md:px-6 
+                className={`bg-main shadow-main fixed top-0  z-50 flex h-screen w-[80%] flex-col px-3 py-3 transition-all duration-300 md:w-[50%] md:px-6 lg:w-[30%] 
                 ${direction === 'right' ? 'right-0 translate-x-full' : ''}
                 ${direction === 'left' ? 'left-0 -translate-x-full' : ''}
                 ${
                     isOpened
-                        ? `${direction === 'right' ? '-' : ''}translate-x-0`
+                        ? direction === 'right'
+                            ? '-translate-x-0'
+                            : 'translate-x-0'
                         : ''
                 }`}
             >
-                <div className="flex-rev-v-center mb-3 justify-between border-b-[1px] border-b-stone-900/10 pb-2 dark:border-b-stone-50/10">
-                    <span
-                        className={`flex-center shadow-main md:[&>svg]:size-5 [&>svg]:size-4 cursor-pointer rounded-full  p-1 hover:bg-gray-200 dark:hover:bg-stone-600 md:p-2 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
+                {hasHeader && (
+                    <div className="flex-rev-v-center mb-3 justify-between border-b-[1px] border-b-stone-900/10 pb-2 dark:border-b-stone-50/10">
+                        <span
+                            className={`flex-center shadow-main md:[&>svg]:size-5 [&>svg]:size-4 cursor-pointer rounded-full  p-1 hover:bg-gray-200 dark:hover:bg-stone-600 md:p-2 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
                     `}
-                        aria-hidden="true"
-                        onClick={() => onOpenDrawer?.('')}
-                    >
-                        <Icons name="xmark" size={20} />
-                    </span>
-                    {title && <h3 className="text-base-res">{title}</h3>}
+                            aria-hidden="true"
+                            onClick={() => onOpenDrawer?.('')}
+                        >
+                            <Icons name="xmark" size={20} />
+                        </span>
+                        {title && <h3 className="text-base-res">{title}</h3>}
+                    </div>
+                )}
+
+                <div className="flex-1 overflow-y-auto">
+                    {cloneElement(children, {
+                        onClick: () => onOpenDrawer?.(''),
+                    })}
                 </div>
-                <div className="flex-1 overflow-y-auto">{children}</div>
                 {footerButtonOption && (
                     <div>
                         <Divider />

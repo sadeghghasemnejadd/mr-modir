@@ -39,7 +39,7 @@ export default function Nav() {
 
     return (
         <nav
-            className={`bg-main shadow-main col-[1/2] row-span-full hidden h-full w-[300px] overflow-x-hidden p-6 transition-all duration-500 md:block
+            className={`bg-main shadow-main col-[1/2] row-span-full hidden h-full overflow-x-hidden p-6 transition-all duration-500 lg:block lg:w-[250px] xl:w-[300px]
             ${isOverlay ? 'fixed right-0 top-0' : ''}
             ${isCollapse ? '!w-24 px-3' : ''}
             `}

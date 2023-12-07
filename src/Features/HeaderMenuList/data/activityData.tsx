@@ -42,7 +42,7 @@ const activityData: IActivityData[] = [
         date: new Date('2023-12-02T18:52:04.793Z'),
         activityType: ActivityTypeEnum.initiated,
         content: (
-            <div className="grid gap-3 md:flex md:gap-6">
+            <div className="grid gap-3 xl:flex xl:gap-6">
                 <div className="flex-center border-activity gap-3 rounded-lg px-4 py-2">
                     <img
                         src="images/avatars/008.png"
@@ -71,11 +71,13 @@ const activityData: IActivityData[] = [
         date: new Date('2023-12-02T17:52:04.793Z'),
         activityType: ActivityTypeEnum.placed,
         content: (
-            <div className="flex-cols border-activity gap-3 rounded-lg px-4 py-2">
-                <q className="text-base-res">
-                    جناب مدیر بالاخره پروژه رو انجام دادم !
-                </q>
-                <Button>مشاهده پروژه</Button>
+            <div className="flex-cols  items-start gap-3 rounded-lg px-4 py-2">
+                <div className="flex-cols border-activity gap-3 rounded-lg px-2 py-2 md:px-4">
+                    <q className="text-base-res">
+                        جناب مدیر بالاخره پروژه رو انجام دادم !
+                    </q>
+                    <Button>مشاهده پروژه</Button>
+                </div>
             </div>
         ),
     },

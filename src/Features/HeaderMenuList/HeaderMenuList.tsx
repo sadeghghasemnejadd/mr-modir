@@ -5,6 +5,7 @@ import HeaderSearch from './HeaderSearch'
 import Notifications from './Notifications'
 import Profile from './Profile'
 import SettingTheme from './SettingTheme'
+import Sidebar from './Sidebar'
 
 export default function HeaderMenuList() {
     const { isCollapseSearch } = useSelector(
@@ -21,6 +22,7 @@ export default function HeaderMenuList() {
                 </>
             )}
             <HeaderSearch />
+            {!isCollapseSearch && <Sidebar />}
         </ul>
     )
 }

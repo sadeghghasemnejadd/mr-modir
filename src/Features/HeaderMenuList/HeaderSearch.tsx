@@ -16,8 +16,8 @@ export default function HeaderSearch() {
         <li className={`ml-auto w-[30%] ${isCollapseSearch ? 'w-full' : ''}`}>
             <Search
                 placeholder="جستجو کنید ..."
-                containerClassNames="md:w-full"
-                inputClassNames="hidden md:block border-none shadow-none w-full py-3 dark:shadow-none"
+                containerClassNames="lg:w-full"
+                inputClassNames="hidden lg:block border-none shadow-none w-full py-3 dark:shadow-none"
                 onChangeValue={handleChangeSearch}
                 value={searchInput}
                 isResponsive
