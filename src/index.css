@@ -101,6 +101,12 @@
     .size-12 {
         @apply h-12 w-12;
     }
+    .size-13 {
+        @apply h-13 w-13;
+    }
+    .size-14 {
+        @apply h-14 w-14;
+    }
     .size-16 {
         @apply h-16 w-16;
     }

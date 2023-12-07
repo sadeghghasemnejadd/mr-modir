@@ -112,11 +112,11 @@ export default function UnCollapseNavbar({
     return (
         <>
             <div className="flex w-full items-center justify-between">
-                <div className="flex w-full items-center gap-3 [&>svg]:h-14 [&>svg]:w-14 ">
+                <div className="[&>svg]:size-14 flex w-full items-center gap-3 ">
                     <img
                         src="images/logo/logo.png"
                         alt="logo"
-                        className="h-14 w-14"
+                        className="size-14 dark:invert-[70%]"
                     />
                     <h2 className="text-lg font-extrabold">آقای مدیر</h2>
                 </div>
