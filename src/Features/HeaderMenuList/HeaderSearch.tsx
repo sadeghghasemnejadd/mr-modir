@@ -1,20 +1,26 @@
 import { useState, ChangeEvent } from 'react'
+import { useSelector } from 'react-redux'
 import Search from '../../ui/components/Search'
+import IReduxStore from '../../Models/reduxStore'
 
 export default function HeaderSearch() {
     const [searchInput, setSearchInput] = useState<string>('')
-
+    const { isCollapseSearch } = useSelector(
+        (state: IReduxStore) => state.header
+    )
+    console.log(isCollapseSearch)
     const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchInput(event.target.value)
     }
     return (
-        <li className="ml-auto w-[30%]">
+        <li className={`ml-auto w-[30%] ${isCollapseSearch ? 'w-full' : ''}`}>
             <Search
                 placeholder="جستجو کنید ..."
-                containerClassNames="w-full"
-                inputClassNames="border-none shadow-none w-full py-3 dark:shadow-none"
+                containerClassNames="md:w-full"
+                inputClassNames="hidden md:block border-none shadow-none w-full py-3 dark:shadow-none"
                 onChangeValue={handleChangeSearch}
                 value={searchInput}
+                isResponsive
             />
         </li>
     )

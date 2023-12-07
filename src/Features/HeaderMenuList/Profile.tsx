@@ -19,13 +19,13 @@ const profileUtilsList: IProfileUtilsList[] = [
     {
         id: 0,
         name: 'پروفایل من',
-        icon: <Icons name="user" size={20} />,
+        icon: <Icons name="user" />,
         route: '/',
     },
     {
         id: 1,
         name: 'پروژه های من',
-        icon: <Icons name="clipboard-list-check" size={20} />,
+        icon: <Icons name="clipboard-list-check" />,
         route: '/',
         badge: '5',
         badgeColor: 'success',
@@ -33,13 +33,13 @@ const profileUtilsList: IProfileUtilsList[] = [
     {
         id: 2,
         name: 'تنظیمات',
-        icon: <Icons name="gear" size={20} />,
+        icon: <Icons name="gear" />,
         route: '/',
     },
     {
         id: 3,
         name: 'پرداخت',
-        icon: <Icons name="credit-card" size={20} />,
+        icon: <Icons name="credit-card" />,
         route: '/',
         badge: '2',
         badgeColor: 'error',
@@ -75,25 +75,27 @@ export default function Profile() {
                         <img
                             src="images/avatars/001.png"
                             alt="avatar"
-                            className="size-12 avatar"
+                            className="size-8 md:size-12 avatar"
                         />
                         <span className="online-state animate-ping" />
                         <span className="online-state" />
                     </div>
                 </HeaderDropdown.Thumbnail>
                 <HeaderDropdown.DropBox name="profile">
-                    <div className="flex gap-4">
+                    <div className="flex gap-2 md:gap-4">
                         <img
                             src="images/avatars/001.png"
                             alt="avatar"
-                            className="avatar h-16 w-16"
+                            className="avatar md:size-16 size-9"
                         />
-                        <div className="flex-col-v-center text-right ">
-                            <div className="flex-v-center gap-3">
-                                <p className="font-bold">صادق قاسم نژاد</p>
+                        <div className="flex-col-v-center gap-1 text-right">
+                            <div className="flex-v-center gap-1 md:gap-3">
+                                <p className="text-base-res font-bold">
+                                    صادق قاسم نژاد
+                                </p>
                                 <Badge text={RolesEnum.Admin} />
                             </div>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                            <p className="text-[8px] text-gray-500 dark:text-gray-400 md:text-sm">
                                 ghasemnejad.sadegh@gmail.com
                             </p>
                         </div>
@@ -107,9 +109,11 @@ export default function Profile() {
                             >
                                 <Link
                                     to={profile.route}
-                                    className="[&>svg]:profile-icon flex-v-center gap-2 p-3 font-bold group-hover:text-primary-700 dark:group-hover:text-primary-100 [&>svg]:group-hover:fill-primary-600 dark:[&>svg]:group-hover:fill-primary-100"
+                                    className="[&>svg]:profile-icon flex-v-center text-base-res gap-2 p-3 font-bold group-hover:text-primary-700 dark:group-hover:text-primary-100 [&>svg]:group-hover:fill-primary-600 dark:[&>svg]:group-hover:fill-primary-100"
                                 >
-                                    {profile.icon}
+                                    <span className="md:[&>svg]:size-5 [&>svg]:size-4">
+                                        {profile.icon}
+                                    </span>
                                     {profile.name}
                                     {profile.badge && (
                                         <Badge
@@ -132,9 +136,11 @@ export default function Profile() {
                             >
                                 <Link
                                     to={profile.route}
-                                    className="flex-v-center gap-2 px-3 py-3 font-bold no-underline group-hover:text-primary-700 dark:group-hover:text-primary-100 [&>svg]:group-hover:fill-primary-600 dark:[&>svg]:group-hover:fill-primary-100"
+                                    className="flex-v-center dark:group-hover:text-primary-100text-base-res gap-2 px-3 py-3 font-bold no-underline group-hover:text-primary-700 [&>svg]:group-hover:fill-primary-600 dark:[&>svg]:group-hover:fill-primary-100"
                                 >
-                                    {profile.icon}
+                                    <span className="md:[&>svg]:size-5 [&>svg]:size-4">
+                                        {profile.icon}
+                                    </span>
                                     {profile.name}
                                     {profile.badge && (
                                         <Badge

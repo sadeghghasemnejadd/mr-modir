@@ -12,7 +12,7 @@ export default function Badge({
 }: IBadgeProps) {
     return (
         <div
-            className={`border px-3 py-1 font-bold
+            className={`text-base-res border px-2 py-1 font-bold md:px-3
       ${size === 'sm' ? 'text-sm' : ''}
       ${size === 'xs' ? 'text-xs' : ''}
       ${rounded ? 'rounded-full' : 'rounded-lg'}

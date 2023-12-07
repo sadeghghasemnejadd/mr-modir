@@ -36,9 +36,10 @@ export default function Notifications() {
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="notification">
                     <div className=" flex-center group relative transition-all [&>svg]:transition-none [&>svg]:hover:fill-primary-600 dark:[&>svg]:fill-primary-100 dark:[&>svg]:hover:fill-primary-500">
-                        <Icons name="bell" size={30} />
-
-                        <span className="flex-center absolute -right-0 -top-2 h-[18px] w-[18px]  rounded-full bg-primary-600 text-[11px] text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950">
+                        <span className="md:[&>svg]:size-8 [&>svg]:size-6">
+                            <Icons name="bell" />
+                        </span>
+                        <span className="flex-center absolute -right-1 -top-2 h-[18px] w-[18px] rounded-full  bg-primary-600 text-[10px] text-primary-50 group-hover:animate-bounce dark:bg-primary-200 dark:text-primary-950 md:right-0 md:text-[11px]">
                             {
                                 notifications.filter(
                                     (notif) =>
@@ -50,9 +51,9 @@ export default function Notifications() {
                     </div>
                 </HeaderDropdown.Thumbnail>
                 <HeaderDropdown.DropBox name="notification">
-                    <div className="flex-v-center justify-between  dark:[&>svg]:fill-primary-50">
-                        <Icons name="envelope-open-text" size={30} />
-                        <p>پیام ها</p>
+                    <div className="flex-v-center md:[&>svg];size-8  [&>svg]:size-6 justify-between dark:[&>svg]:fill-primary-50">
+                        <Icons name="envelope-open-text" />
+                        <p className="text-base-res">پیام ها</p>
                     </div>
                     <Divider />
                     {!notifications.length && (
@@ -72,17 +73,17 @@ export default function Notifications() {
                                         }
                                         aria-hidden="true"
                                     >
-                                        <div className="relative flex gap-3 p-3">
+                                        <div className="relative flex gap-2 p-1 md:gap-3 md:p-3">
                                             {notification.avatar && (
                                                 <img
                                                     src={notification.avatar}
                                                     alt={notification.title}
-                                                    className="size-12 rounded-full dark:bg-stone-500"
+                                                    className="md:size-12 size-10 rounded-full dark:bg-stone-500"
                                                 />
                                             )}
                                             {notification.logo && (
                                                 <span
-                                                    className={` flex-center size-12 rounded-full [&>svg]:h-6 [&>svg]:w-6  ${
+                                                    className={`flex-center md:size-12 size-10 md:[&>svg]:size-6 [&>svg]:size-4 rounded-full  ${
                                                         notification.logoStatus ===
                                                         LogoStatusEnum.successful
                                                             ? 'bg-green-500/30 dark:bg-green-900/30 [&>svg]:fill-green-700 dark:[&>svg]:fill-green-300'
@@ -112,7 +113,7 @@ export default function Notifications() {
                                                 </span>
                                             )}
                                             <div className="flex-cols gap-1">
-                                                <h5 className="font-bold">
+                                                <h5 className="text-base-res font-bold">
                                                     {notification.title}
                                                 </h5>
                                                 <p className="max-w-[200px] text-xs leading-5">
@@ -126,7 +127,7 @@ export default function Notifications() {
                                             </div>
                                             {notification.readStatus ===
                                                 ReadStatusEnum.unRead && (
-                                                <span className="absolute left-3 top-3  block h-2 w-2  rounded-full bg-primary-500" />
+                                                <span className="md:size-2 size-1 absolute left-3  top-3 block  rounded-full bg-primary-500" />
                                             )}
                                             <span
                                                 className="absolute left-2 top-10 hidden cursor-pointer transition-all group-hover:block"

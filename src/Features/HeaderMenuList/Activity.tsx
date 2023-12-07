@@ -22,7 +22,7 @@ export default function Activity() {
                     <img
                         src={activity.avatar}
                         alt={activity.author}
-                        className="avatar h-6 w-6"
+                        className="avatar md:size-6 size-4"
                     />
                 </Tooltip>
             </div>
@@ -32,8 +32,8 @@ export default function Activity() {
         <li>
             <Drawer direction="left">
                 <Drawer.Thumbnail name="activity">
-                    <span className="flex-center svg-duration-100 [&>svg]:hover:fill-primary-500">
-                        <Icons name="clock-rotate-left" size={30} />
+                    <span className="flex-center svg-duration-100 md:[&>svg]:size-8 [&>svg]:size-6 [&>svg]:hover:fill-primary-500">
+                        <Icons name="clock-rotate-left" />
                     </span>
                 </Drawer.Thumbnail>
                 <Drawer.Box
@@ -45,22 +45,24 @@ export default function Activity() {
                     }}
                 >
                     <div className="relative">
-                        <span className="border-activity absolute right-6 top-0 block h-full" />
-                        <div className="flex-cols gap-12">
+                        <span className="border-activity absolute right-4 top-0 block h-full md:right-6" />
+                        <div className="flex-cols gap-10 overflow-hidden md:gap-12">
                             {activityData.map((activity) => (
                                 <div
                                     key={activity.id}
-                                    className="flex justify-between gap-6"
+                                    className="flex justify-between gap-3 md:gap-6"
                                 >
-                                    <span className="flex-center bg-main border-activity z-10 h-12 w-12 rounded-full [&>svg]:h-5 [&>svg]:w-5">
+                                    <span className="flex-center bg-main border-activity md:[&>svg]:size-5 [&>svg]:size-3 md:size-12 size-8 z-10 rounded-full">
                                         {activity.icon}
                                     </span>
-                                    <div className="flex-cols flex-1 gap-3">
-                                        <h3 className="break-all font-bold">
+                                    <div className="flex-cols flex-1 gap-2 md:gap-3">
+                                        <h3 className="text-base-res break-all font-bold">
                                             {activity.title}
                                         </h3>
                                         {generateActivitySubTitle(activity)}
-                                        <div>{activity.content}</div>
+                                        <div className="">
+                                            {activity.content}
+                                        </div>
                                     </div>
                                 </div>
                             ))}

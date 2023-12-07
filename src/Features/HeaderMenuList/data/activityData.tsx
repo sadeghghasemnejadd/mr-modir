@@ -24,8 +24,10 @@ const activityData: IActivityData[] = [
         activityType: ActivityTypeEnum.added,
         content: (
             <div className="flex-cols items-start gap-3 text-sm leading-9">
-                <div className="flex-cols border-activity gap-3 rounded-lg px-4 py-2">
-                    <p>خرید Samsung galaxy s24 ultra و Earbuds 2 pro</p>
+                <div className="flex-cols border-activity gap-3 rounded-lg px-2 py-2 md:px-4">
+                    <p className="text-base-res leading-5">
+                        خرید Samsung galaxy s24 ultra و Earbuds 2 pro
+                    </p>
                     <Button>مشاهده پرداخت</Button>
                 </div>
             </div>
@@ -40,22 +42,22 @@ const activityData: IActivityData[] = [
         date: new Date('2023-12-02T18:52:04.793Z'),
         activityType: ActivityTypeEnum.initiated,
         content: (
-            <div className="flex gap-6">
+            <div className="grid gap-3 md:flex md:gap-6">
                 <div className="flex-center border-activity gap-3 rounded-lg px-4 py-2">
                     <img
                         src="images/avatars/008.png"
                         alt="user8"
-                        className="avatar h-8 w-8"
+                        className="avatar md:size-8 size-6"
                     />
-                    <p>زهرا امینی</p>
+                    <p className="text-base-res">زهرا امینی</p>
                 </div>
                 <div className="flex-center border-activity gap-3 rounded-lg px-4 py-2">
                     <img
                         src="images/avatars/009.png"
                         alt="user8"
-                        className="avatar h-8 w-8"
+                        className="avatar md:size-8 size-6"
                     />
-                    <p>ماهک عزیزان</p>
+                    <p className="text-base-res">ماهک عزیزان</p>
                 </div>
             </div>
         ),
@@ -70,7 +72,9 @@ const activityData: IActivityData[] = [
         activityType: ActivityTypeEnum.placed,
         content: (
             <div className="flex-cols border-activity gap-3 rounded-lg px-4 py-2">
-                <q>جناب مدیر بالاخره پروژه رو انجام دادم !</q>
+                <q className="text-base-res">
+                    جناب مدیر بالاخره پروژه رو انجام دادم !
+                </q>
                 <Button>مشاهده پروژه</Button>
             </div>
         ),

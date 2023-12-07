@@ -7,8 +7,8 @@ export default function Header() {
 
     return (
         <header
-            className={`flex-rev-v-center bg-main shadow-main  ml-12 mt-6 h-full w-full rounded-md px-12 ${
-                isOverlay ? 'col-[1/-1]' : 'col-[2/-1]'
+            className={`flex-rev-v-center bg-main shadow-main col-[1/-1] ml-12 mt-6 h-full w-full rounded-md px-3 md:px-12  ${
+                isOverlay ? 'col-[1/-1]' : 'md:col-[2/-1]'
             }`}
         >
             <HeaderMenuList />

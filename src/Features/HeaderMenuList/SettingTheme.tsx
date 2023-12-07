@@ -74,24 +74,24 @@ export default function SettingTheme() {
             <HeaderDropdown>
                 <HeaderDropdown.Thumbnail name="setting">
                     <div className="flex-center group relative">
-                        <span className="svg-duration-100 [&>svg]:group-hover:fill-primary-500">
-                            <Icons name="paintbrush" size={30} />
+                        <span className="svg-duration-100 md:[&>svg]:size-8 [&>svg]:size-6 [&>svg]:group-hover:fill-primary-500">
+                            <Icons name="paintbrush" />
                         </span>
-                        <span className=" svg-duration-100 absolute -top-2 left-0 [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
-                            <Icons name="gear" size={16} />
+                        <span className=" svg-duration-100 md:[&>svg]:size-4 [&>svg]:size-3 absolute -top-2 left-0 [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
+                            <Icons name="gear" />
                         </span>
                     </div>
                 </HeaderDropdown.Thumbnail>
                 <HeaderDropdown.DropBox name="setting" size="sm">
-                    <div className="flex-cols gap-6">
+                    <div className="flex-cols gap-4 md:gap-6">
                         <div>
-                            <p>رنگ ها</p>
+                            <p className="text-base-res">رنگ ها</p>
                             <Divider />
-                            <div className="grid grid-cols-4">
+                            <div className="grid grid-cols-2 gap-y-4 md:grid-cols-4">
                                 {colorsData.map((color) => (
                                     <span
                                         key={color.id}
-                                        className={`block h-5 w-5 cursor-pointer rounded-full transition-all ${
+                                        className={`md:size-5 size-6 block cursor-pointer rounded-full transition-all ${
                                             color.color
                                         } ${
                                             themeColor === color.colorName
@@ -109,7 +109,7 @@ export default function SettingTheme() {
                             </div>
                         </div>
                         <div>
-                            <p>حالت ها</p>
+                            <p className="text-base-res">حالت ها</p>
                             <Divider />
                             <div className="flex-cols gap-2">
                                 {modeData.map((mode) => (
