@@ -1,10 +1,10 @@
 import DashboardsNameEnum from '../Enums/DashboardsNameEnum'
-import Analytics from '../pages/Dashborads/Analytics'
-import Crm from '../pages/Dashborads/Crm'
-import Crypto from '../pages/Dashborads/Crypto'
-import Default from '../pages/Dashborads/Default'
-import Ecommerce from '../pages/Dashborads/Ecommerce'
-import Projects from '../pages/Dashborads/Projects'
+import Analytics from '../pages/Dashboards/Analytics'
+import Crm from '../pages/Dashboards/Crm'
+import Crypto from '../pages/Dashboards/Crypto'
+import Default from '../pages/Dashboards/Default'
+import Ecommerce from '../pages/Dashboards/Ecommerce'
+import Projects from '../pages/Dashboards/Projects'
 
 const routes = [
     // dashboards

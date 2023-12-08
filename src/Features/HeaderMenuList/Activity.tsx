@@ -3,7 +3,7 @@ import activityData, { IActivityData } from './data/activityData'
 import { translateActivityType } from '../../utils/translate'
 import { getLocaleHours } from '../../utils/calendar'
 import Tooltip from '../../ui/components/Tooltip'
-import TooltipDirectionEnum from '../../Enums/TooltipDiectionEnum'
+import TooltipDirectionEnum from '../../Enums/TooltipDirectionEnum'
 import Icons from '../../icons/Icons'
 
 export default function Activity() {
@@ -50,7 +50,7 @@ export default function Activity() {
                             {activityData.map((activity) => (
                                 <div
                                     key={activity.id}
-                                    className="flex justify-between gap-3 md:gap-6"
+                                    className="flex-row-between gap-3 md:gap-6"
                                 >
                                     <span className="flex-center bg-main border-activity md:[&>svg]:size-5 [&>svg]:size-3 md:size-12 size-8 z-10 rounded-full">
                                         {activity.icon}

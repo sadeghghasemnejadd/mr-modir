@@ -64,6 +64,9 @@
     .flex-col-v-center {
         @apply flex flex-col justify-center;
     }
+    .flex-row-between {
+        @apply flex justify-between;
+    }
     .bg-main {
         @apply bg-gray-100 dark:bg-stone-800;
     }
@@ -109,6 +112,9 @@
     }
     .size-16 {
         @apply h-16 w-16;
+    }
+    .size-full {
+        @apply h-full w-full;
     }
     .online-state {
         @apply absolute bottom-0 right-0 block h-3 w-3 rounded-full border border-transparent bg-green-600;

@@ -1,4 +1,6 @@
 import { ReactNode } from 'react'
+import cx from 'classnames'
+
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
 import ThemeColorEnum from '../../Enums/ThemeColorEnum'
@@ -77,7 +79,7 @@ export default function SettingTheme() {
                         <span className="svg-duration-100 md:[&>svg]:size-8 [&>svg]:size-6 [&>svg]:group-hover:fill-primary-500">
                             <Icons name="paintbrush" />
                         </span>
-                        <span className=" svg-duration-100 md:[&>svg]:size-4 [&>svg]:size-3 absolute -top-2 left-0 [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
+                        <span className="svg-duration-100 md:[&>svg]:size-4 [&>svg]:size-3 absolute -top-2 left-0 [&>svg]:duration-100 [&>svg]:group-hover:animate-spin [&>svg]:group-hover:fill-primary-500">
                             <Icons name="gear" />
                         </span>
                     </div>
@@ -91,13 +93,12 @@ export default function SettingTheme() {
                                 {colorsData.map((color) => (
                                     <span
                                         key={color.id}
-                                        className={`md:size-5 size-6 block cursor-pointer rounded-full transition-all ${
-                                            color.color
-                                        } ${
-                                            themeColor === color.colorName
-                                                ? 'outline outline-4 outline-primary-300 dark:outline-primary-400'
-                                                : ''
-                                        }`}
+                                        className={cx(
+                                            'md:size-5 size-6 block cursor-pointer rounded-full transition-all',
+                                            color.color,
+                                            themeColor === color.colorName &&
+                                                'outline outline-4 outline-primary-300 dark:outline-primary-400'
+                                        )}
                                         onClick={() =>
                                             handleChangeThemeColor(
                                                 color.colorName
@@ -115,11 +116,11 @@ export default function SettingTheme() {
                                 {modeData.map((mode) => (
                                     <div
                                         key={mode.id}
-                                        className={`flex-v-center group cursor-pointer gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500 ${
-                                            themeMode === mode.modeName
-                                                ? '[&>svg]:fill-primary-500 '
-                                                : ''
-                                        }`}
+                                        className={cx(
+                                            'flex-v-center group cursor-pointer gap-3 transition-all [&>svg]:transition-all [&>svg]:duration-0 [&>svg]:hover:fill-primary-500',
+                                            themeMode === mode.modeName &&
+                                                '[&>svg]:fill-primary-500 '
+                                        )}
                                         onClick={() =>
                                             handleChangeThemeMode(mode.modeName)
                                         }
@@ -127,11 +128,11 @@ export default function SettingTheme() {
                                     >
                                         {mode.icon}
                                         <p
-                                            className={`group-hover:text-primary-500 ${
-                                                themeMode === mode.modeName
-                                                    ? 'text-primary-500'
-                                                    : ''
-                                            }`}
+                                            className={cx(
+                                                'group-hover:text-primary-500',
+                                                themeMode === mode.modeName &&
+                                                    'text-primary-500'
+                                            )}
                                         >
                                             {mode.name}
                                         </p>

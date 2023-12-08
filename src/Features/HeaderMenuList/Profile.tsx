@@ -132,7 +132,7 @@ export default function Profile() {
                         {profileSettingList.map((profile) => (
                             <li
                                 key={profile.id}
-                                className=" group  rounded-lg transition-all hover:bg-primary-100  dark:hover:bg-primary-900"
+                                className="group rounded-lg transition-all hover:bg-primary-100  dark:hover:bg-primary-900"
                             >
                                 <Link
                                     to={profile.route}

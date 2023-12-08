@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, useLocation } from 'react-router-dom'
+import cx from 'classnames'
+
 import IReduxStore from '../../Models/reduxStore'
 import Divider from '../../ui/components/Divider'
 import navbarItems, { INavBarItems } from '../../routes/navbarItems'
@@ -10,13 +12,13 @@ import Icons from '../../icons/Icons'
 import routes from '../../routes/routes'
 
 interface IUnCollapseNavbarProps {
-    handleClickCollpaseNav?: (isOver: boolean) => void
+    handleClickCollapseNav?: (isOver: boolean) => void
     onClick?: () => void
     isResponsive?: boolean
 }
 
 export default function UnCollapseNavbar({
-    handleClickCollpaseNav,
+    handleClickCollapseNav,
     onClick,
     isResponsive = false,
 }: IUnCollapseNavbarProps) {
@@ -53,13 +55,14 @@ export default function UnCollapseNavbar({
             <ul className="flex-cols mb-0.5 gap-2 transition-all">
                 {items.map((item) => {
                     const isActive = openedMenus.includes(item.name)
+                    const isActiveMenu = activeMenu?.name === item.name
                     return (
                         <li
                             key={item.name}
                             className="flex-cols cursor-pointer gap-2 "
                         >
                             <div
-                                className="group flex justify-between "
+                                className="flex-row-between group"
                                 aria-hidden="true"
                                 onClick={() => handleOpenMenu(item)}
                             >
@@ -72,12 +75,11 @@ export default function UnCollapseNavbar({
                                     >
                                         {!!item.icon && (
                                             <span
-                                                className={`[&>svg]:h-6 [&>svg]:w-6 [&>svg]:duration-0 group-hover:[&>svg]:fill-primary-600 ${
-                                                    activeMenu?.name ===
-                                                    item.name
-                                                        ? '[&>svg]:!fill-primary-600'
-                                                        : ''
-                                                }`}
+                                                className={cx(
+                                                    '[&>svg]:h-6 [&>svg]:w-6 [&>svg]:duration-0 group-hover:[&>svg]:fill-primary-600',
+                                                    isActiveMenu &&
+                                                        '[&>svg]:!fill-primary-600'
+                                                )}
                                             >
                                                 <Icons name={item.icon} />
                                             </span>
@@ -85,21 +87,20 @@ export default function UnCollapseNavbar({
                                         {!!item.icon || (
                                             <div className="flex h-5 w-5 items-center justify-end">
                                                 <span
-                                                    className={`h-1 w-1 rounded-full border border-stone-950 bg-stone-950 group-hover:border-primary-600 group-hover:bg-primary-600 dark:border-stone-50 dark:bg-stone-50 ${
-                                                        activeMenu?.name ===
-                                                        item.name
-                                                            ? '!border-primary-600 !bg-primary-600'
-                                                            : ''
-                                                    }`}
+                                                    className={cx(
+                                                        'h-1 w-1 rounded-full border border-stone-950 bg-stone-950 group-hover:border-primary-600 group-hover:bg-primary-600 dark:border-stone-50 dark:bg-stone-50',
+                                                        isActiveMenu &&
+                                                            '!border-primary-600 !bg-primary-600'
+                                                    )}
                                                 />
                                             </div>
                                         )}
                                         <p
-                                            className={`group-hover:text-primary-600 ${
-                                                activeMenu?.name === item.name
-                                                    ? '!text-primary-600'
-                                                    : ''
-                                            }`}
+                                            className={cx(
+                                                'group-hover:text-primary-600',
+                                                isActiveMenu &&
+                                                    '!text-primary-600'
+                                            )}
                                         >
                                             {item.label}
                                         </p>
@@ -134,13 +135,13 @@ export default function UnCollapseNavbar({
                                             />
                                         )}
                                         <span
-                                            className={`cursor-pointer rounded-full [&>svg]:h-3 [&>svg]:w-3 [&>svg]:transition-all [&>svg]:duration-300 ${
+                                            className={cx(
+                                                'cursor-pointer rounded-full [&>svg]:h-3 [&>svg]:w-3 [&>svg]:transition-all [&>svg]:duration-300',
                                                 openedMenu
                                                     .split(':')
-                                                    .includes(item.name)
-                                                    ? '[&>svg]:-rotate-90'
-                                                    : ''
-                                            }`}
+                                                    .includes(item.name) &&
+                                                    '[&>svg]:-rotate-90'
+                                            )}
                                         >
                                             <Icons name="angle-left" />
                                         </span>
@@ -149,9 +150,10 @@ export default function UnCollapseNavbar({
                             </div>
                             {item.children && (
                                 <div
-                                    className={`menu-item ${
-                                        isActive ? 'menu-item-active' : ''
-                                    }`}
+                                    className={cx(
+                                        'menu-item',
+                                        isActive && 'menu-item-active'
+                                    )}
                                 >
                                     {generateMenus(item.children)}
                                 </div>
@@ -165,7 +167,7 @@ export default function UnCollapseNavbar({
 
     return (
         <>
-            <div className="flex w-full items-center justify-between">
+            <div className="flex-row-between w-full items-center ">
                 <div className="[&>svg]:size-14 flex w-full items-center gap-3 ">
                     <img
                         src="images/logo/logo.png"
@@ -175,11 +177,12 @@ export default function UnCollapseNavbar({
                     <h2 className="text-lg font-extrabold">آقای مدیر</h2>
                 </div>
                 <span
-                    className={`cursor-pointer transition-all duration-500 ${
-                        isOverlay ? '-rotate-180' : ''
-                    }`}
+                    className={cx(
+                        'cursor-pointer transition-all duration-500',
+                        isOverlay && '-rotate-180'
+                    )}
                     onClick={() => {
-                        handleClickCollpaseNav?.(!!isOverlay)
+                        handleClickCollapseNav?.(!!isOverlay)
                         onClick?.()
                     }}
                     aria-hidden="true"

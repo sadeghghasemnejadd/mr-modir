@@ -9,6 +9,8 @@ import {
     cloneElement,
     ReactElement,
 } from 'react'
+import cx from 'classnames'
+
 import clickOutside from '../../utils/clickOutSide'
 import Divider from './Divider'
 import LinkButton from './LinkButton'
@@ -39,6 +41,7 @@ interface IBoxProps {
     footerButtonOption?: IFooterButtonOption
     hasHeader?: boolean
 }
+
 const DrawerContext = createContext<IDrawerContextValue>({})
 
 function Drawer({ children, direction }: IDrawerProps) {
@@ -88,7 +91,7 @@ function Thumbnail({ children, name, classNames }: IThumbnailProps) {
         <div
             onClick={handleOpenDrawer}
             aria-hidden="true"
-            className={`cursor-pointer ${classNames}`}
+            className={cx('cursor-pointer', classNames)}
         >
             {children}
         </div>
@@ -108,22 +111,26 @@ function Box({
     return (
         <>
             <div
-                className={`bg-main shadow-main fixed top-0  z-50 flex h-screen w-[80%] flex-col px-3 py-3 transition-all duration-300 md:w-[50%] md:px-6 xl:w-[30%] 2xl:w-[20%] 
-                ${direction === 'right' ? 'right-0 translate-x-full' : ''}
-                ${direction === 'left' ? 'left-0 -translate-x-full' : ''}
-                ${
-                    isOpened
-                        ? direction === 'right'
+                className={cx(
+                    'bg-main shadow-main fixed top-0  z-50 flex h-screen w-[80%] flex-col px-3 py-3 transition-all duration-300 md:w-[50%] md:px-6 xl:w-[30%] 2xl:w-[20%]',
+                    direction === 'right' && 'right-0 translate-x-full',
+                    direction === 'left' && 'left-0 -translate-x-full',
+                    isOpened &&
+                        (direction === 'right'
                             ? '!-translate-x-0'
-                            : '!translate-x-0'
-                        : ''
-                }`}
+                            : '!translate-x-0')
+                )}
             >
                 {hasHeader && (
-                    <div className="flex-rev-v-center mb-3 justify-between border-b-[1px] border-b-stone-900/10 pb-2 dark:border-b-stone-50/10">
+                    <div
+                        className={cx(
+                            'flex-rev-v-center mb-3 justify-between border-b-[1px] border-b-stone-900/10 pb-2 dark:border-b-stone-50/10'
+                        )}
+                    >
                         <span
-                            className={`flex-center shadow-main md:[&>svg]:size-5 [&>svg]:size-4 cursor-pointer rounded-full  p-1 hover:bg-gray-200 dark:hover:bg-stone-600 md:p-2 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50
-                    `}
+                            className={cx(
+                                'flex-center shadow-main md:[&>svg]:size-5 [&>svg]:size-4 cursor-pointer rounded-full  p-1 hover:bg-gray-200 dark:hover:bg-stone-600 md:p-2 [&>svg]:fill-primary-950 dark:[&>svg]:fill-primary-50'
+                            )}
                             aria-hidden="true"
                             onClick={() => onOpenDrawer?.('')}
                         >

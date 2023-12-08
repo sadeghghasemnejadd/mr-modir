@@ -1,4 +1,6 @@
 import { MouseEvent, useState } from 'react'
+import cx from 'classnames'
+
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
 import notificationData from './data/notificitaionData'
@@ -83,31 +85,21 @@ export default function Notifications() {
                                             )}
                                             {notification.logo && (
                                                 <span
-                                                    className={`flex-center md:size-12 size-10 md:[&>svg]:size-6 [&>svg]:size-4 rounded-full  ${
+                                                    className={cx(
+                                                        'flex-center md:size-12 size-10 md:[&>svg]:size-6 [&>svg]:size-4 rounded-full',
                                                         notification.logoStatus ===
-                                                        LogoStatusEnum.successful
-                                                            ? 'bg-green-500/30 dark:bg-green-900/30 [&>svg]:fill-green-700 dark:[&>svg]:fill-green-300'
-                                                            : ''
-                                                    }
-                                                    ${
+                                                            LogoStatusEnum.successful &&
+                                                            'bg-green-500/30 dark:bg-green-900/30 [&>svg]:fill-green-700 dark:[&>svg]:fill-green-300',
                                                         notification.logoStatus ===
-                                                        LogoStatusEnum.notify
-                                                            ? 'bg-blue-500/30 dark:bg-blue-900/30 [&>svg]:fill-blue-700 dark:[&>svg]:fill-blue-300'
-                                                            : ''
-                                                    }
-                                                    ${
+                                                            LogoStatusEnum.notify &&
+                                                            'bg-blue-500/30 dark:bg-blue-900/30 [&>svg]:fill-blue-700 dark:[&>svg]:fill-blue-300',
                                                         notification.logoStatus ===
-                                                        LogoStatusEnum.error
-                                                            ? 'bg-red-500/30 dark:bg-red-900/30 [&>svg]:fill-red-700 dark:[&>svg]:fill-red-300'
-                                                            : ''
-                                                    }
-                                                    ${
+                                                            LogoStatusEnum.error &&
+                                                            'bg-red-500/30 dark:bg-red-900/30 [&>svg]:fill-red-700 dark:[&>svg]:fill-red-300',
                                                         notification.logoStatus ===
-                                                        LogoStatusEnum.warning
-                                                            ? 'bg-yellow-500/30 dark:bg-yellow-900/30 [&>svg]:fill-yellow-700 dark:[&>svg]:fill-yellow-300'
-                                                            : ''
-                                                    }
-                                                    `}
+                                                            LogoStatusEnum.warning &&
+                                                            'bg-yellow-500/30 dark:bg-yellow-900/30 [&>svg]:fill-yellow-700 dark:[&>svg]:fill-yellow-300'
+                                                    )}
                                                 >
                                                     {notification.logo}
                                                 </span>
