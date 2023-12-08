@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AppLayout from './ui/layout/AppLayout'
-import Default from './pages/Dashborads/Default'
+import routes from './routes/routes'
 
 function App() {
     useEffect(() => {
@@ -20,7 +20,13 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route element={<AppLayout />}>
-                    <Route element={<Default />} path="/" />
+                    {routes.map((route) => (
+                        <Route
+                            key={route.id}
+                            element={route.element}
+                            path={route.route}
+                        />
+                    ))}
                 </Route>
             </Routes>
         </BrowserRouter>

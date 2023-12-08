@@ -8,7 +8,6 @@ export default function HeaderSearch() {
     const { isCollapseSearch } = useSelector(
         (state: IReduxStore) => state.header
     )
-    console.log(isCollapseSearch)
     const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchInput(event.target.value)
     }

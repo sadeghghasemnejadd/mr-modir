@@ -1,6 +1,6 @@
 import { INavBarItems } from '../routes/navbarItems'
 
-const findAndCreateHierarchy = (item: INavBarItems, list: INavBarItems[]) => {
+const findAndCreateHierarchy = (item: string, list: INavBarItems[]) => {
     let output = ''
 
     const findItem = (navItem: INavBarItems, currentPath: string = '') => {
@@ -8,7 +8,7 @@ const findAndCreateHierarchy = (item: INavBarItems, list: INavBarItems[]) => {
             ? `${currentPath}:${navItem.name}`
             : navItem.name
 
-        if (navItem.name === item.name) {
+        if (navItem.name === item) {
             output = newPath
             return
         }

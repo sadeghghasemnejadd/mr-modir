@@ -1,3 +1,5 @@
+import DashboardsNameEnum from '../Enums/DashboardsNameEnum'
+
 export interface INavBarItems {
     name: string
     label: string
@@ -13,32 +15,32 @@ const navbarItems: INavBarItems[] = [
         icon: 'rectangles-mixed',
         children: [
             {
-                name: 'default',
+                name: DashboardsNameEnum.default,
                 label: 'ساده',
                 route: '/',
             },
             {
-                name: 'ecommerce',
+                name: DashboardsNameEnum.ecommerce,
                 label: 'ایکامرس',
                 route: '/ecommerce',
             },
             {
-                name: 'projects',
+                name: DashboardsNameEnum.projects,
                 label: 'پروژه',
                 route: '/projects',
             },
             {
-                name: 'analytics',
+                name: DashboardsNameEnum.analytics,
                 label: 'آنالیز',
                 route: '/analytics',
             },
             {
-                name: 'crm',
+                name: DashboardsNameEnum.crm,
                 label: 'ارتباط با مشتری(crm)',
                 route: '/crm',
             },
             {
-                name: 'crypto',
+                name: DashboardsNameEnum.crypto,
                 label: 'ارز دیجیتال',
                 route: '/crypto',
             },

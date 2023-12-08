@@ -114,8 +114,8 @@ function Box({
                 ${
                     isOpened
                         ? direction === 'right'
-                            ? '-translate-x-0'
-                            : 'translate-x-0'
+                            ? '!-translate-x-0'
+                            : '!translate-x-0'
                         : ''
                 }`}
             >
