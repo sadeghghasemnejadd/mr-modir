@@ -104,7 +104,7 @@ function DropBox({ children, name, size = 'md' }: IDropBoxProps) {
     return (
         <div
             className={cx(
-                'bg-main shadow-main absolute -left-4 top-[220%] animate-show rounded-xl p-3 md:left-0  md:top-[150%] md:p-6',
+                'bg-main shadow-main absolute -left-4 top-[220%] z-30 animate-show rounded-xl p-3  md:left-0 md:top-[150%] md:p-6',
                 size === 'md' && 'w-64 md:w-96',
                 size === 'sm' && 'w-32 md:w-48'
             )}

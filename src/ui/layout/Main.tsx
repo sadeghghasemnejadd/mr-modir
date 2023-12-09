@@ -5,5 +5,7 @@ interface IMainProps {
 }
 
 export default function Main({ children }: IMainProps) {
-    return <main className="ml-12 mt-6 overflow-auto">{children}</main>
+    return (
+        <main className="mt-6 w-full overflow-auto px-1 pt-6">{children}</main>
+    )
 }

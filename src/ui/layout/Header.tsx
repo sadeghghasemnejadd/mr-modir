@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <header
             className={cx(
-                'flex-rev-v-center bg-main shadow-main size-full col-[1/-1] ml-11 mr-1 mt-6 rounded-md px-3 lg:px-12',
+                'flex-rev-v-center bg-main shadow-main size-full col-[1/-1] ml-11 mr-1  mt-6 rounded-md px-3 lg:px-12',
                 isOverlay ? 'col-[1/-1]' : 'lg:col-[2/-1]'
             )}
         >
