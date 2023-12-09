@@ -1,12 +1,13 @@
 import { ReactNode } from 'react'
 import cx from 'classnames'
-
+import { useDispatch, useSelector } from 'react-redux'
 import HeaderDropdown from '../../ui/components/HeaderDropdown'
 import Divider from '../../ui/components/Divider'
 import ThemeColorEnum from '../../Enums/ThemeColorEnum'
-import useTheme from '../../hooks/useTheme'
 import ThemeModeEnum from '../../Enums/ThemeModeEnum'
 import Icons from '../../icons/Icons'
+import { changeColorTheme, changeModeTheme } from '../../store/uiReducers/theme'
+import IReduxStore from '../../Models/reduxStore'
 
 interface IColorData {
     id: number
@@ -62,14 +63,16 @@ const modeData: IModeData[] = [
     },
 ]
 export default function SettingTheme() {
-    const { changeColorTheme, themeColor, changeModeTheme, themeMode } =
-        useTheme()
+    const dispatch = useDispatch()
+    const { themeColor, themeMode } = useSelector(
+        (state: IReduxStore) => state.theme
+    )
 
     const handleChangeThemeColor = (colorName: ThemeColorEnum) => {
-        changeColorTheme(colorName)
+        dispatch(changeColorTheme(colorName))
     }
     const handleChangeThemeMode = (colorMOde: ThemeModeEnum) => {
-        changeModeTheme(colorMOde)
+        dispatch(changeModeTheme(colorMOde))
     }
     return (
         <li>

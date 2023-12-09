@@ -131,7 +131,7 @@ export default function UnCollapseNavbar({
                                                 text={item.badge}
                                                 rounded
                                                 size="xs"
-                                                color="main"
+                                                color="primary"
                                             />
                                         )}
                                         <span

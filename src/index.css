@@ -113,6 +113,18 @@
     .size-16 {
         @apply h-16 w-16;
     }
+    .size-24 {
+        @apply h-24 w-24;
+    }
+    .size-32 {
+        @apply h-32 w-32;
+    }
+    .size-48 {
+        @apply h-48 w-48;
+    }
+    .size-64 {
+        @apply h-64 w-64;
+    }
     .size-full {
         @apply h-full w-full;
     }

@@ -22,15 +22,15 @@ export default function Card({
                 bgColor === 'main' && '!bg-primary-700'
             )}
         >
-            <div className="absolute inset-0 h-full w-full overflow-hidden">
-                {!!backgroundUrl && (
+            {!!backgroundUrl && (
+                <div className="absolute inset-0 h-full w-full overflow-hidden">
                     <img
                         src={backgroundUrl}
                         alt="cart-bg"
                         className="absolute left-0 top-0 z-10 opacity-10 dark:invert"
                     />
-                )}
-            </div>
+                </div>
+            )}
             {children}
         </div>
     )
