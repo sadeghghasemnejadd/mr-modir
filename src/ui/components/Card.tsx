@@ -17,18 +17,20 @@ export default function Card({
     return (
         <div
             className={cx(
-                'shadow-main bg-main relative w-full overflow-hidden rounded-lg p-6',
+                'shadow-main bg-main relative w-full rounded-lg p-6',
                 fixedHeight && 'h-56',
                 bgColor === 'main' && '!bg-primary-700'
             )}
         >
-            {!!backgroundUrl && (
-                <img
-                    src={backgroundUrl}
-                    alt="cart-bg"
-                    className="absolute left-0 top-0 z-10 opacity-10 dark:invert"
-                />
-            )}
+            <div className="absolute inset-0 h-full w-full overflow-hidden">
+                {!!backgroundUrl && (
+                    <img
+                        src={backgroundUrl}
+                        alt="cart-bg"
+                        className="absolute left-0 top-0 z-10 opacity-10 dark:invert"
+                    />
+                )}
+            </div>
             {children}
         </div>
     )
