@@ -43,7 +43,7 @@ export default function Nav() {
         <nav
             className={cx(
                 'bg-main shadow-main col-[1/2] row-span-full hidden h-full overflow-x-hidden p-6 transition-all duration-500 lg:block lg:w-[250px] xl:w-[300px]',
-                isOverlay && 'fixed right-0 top-0',
+                isOverlay && 'fixed right-0 top-0 z-50',
                 isCollapse && '!w-24 px-3'
             )}
             onMouseEnter={handleMouseEnter}

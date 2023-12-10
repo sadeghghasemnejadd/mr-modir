@@ -11,7 +11,7 @@ export default function ProgressBar({
     total,
 }: IProgressBarProps) {
     const pending = total - finished
-    const percentage = (finished / total) * 100
+    const percentage = Math.ceil((finished / total) * 100)
     return (
         <div className="relative">
             {hasPendingText && (
@@ -24,10 +24,16 @@ export default function ProgressBar({
             </span>
             <div
                 className={cx(
-                    'relative h-2 w-full overflow-hidden rounded-2xl bg-stone-300/50 after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:bg-white dark:bg-stone-400',
-                    `after:!w-[${percentage}%]`
+                    'relative flex h-2 w-full overflow-hidden rounded-2xl bg-stone-300/50 dark:bg-stone-400'
                 )}
-            />
+            >
+                <span
+                    className={cx(
+                        'absolute right-0 top-0 z-10 h-full  bg-white'
+                    )}
+                    style={{ width: `${percentage}%` }}
+                />
+            </div>
         </div>
     )
 }

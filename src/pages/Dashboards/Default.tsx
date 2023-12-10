@@ -1,5 +1,6 @@
 import ActiveOrders from '../../Features/Default/ActiveOrders'
 import IncomeChart from '../../Features/Default/IncomeChart'
+import LatestOrders from '../../Features/Default/LatestOrders'
 import Seller from '../../Features/Default/Seller'
 
 export default function Default() {
@@ -8,6 +9,7 @@ export default function Default() {
             <ActiveOrders />
             <Seller />
             <IncomeChart />
+            <LatestOrders />
         </section>
     )
 }
