@@ -51,7 +51,7 @@ export default function LatestOrders() {
                                     className={cx(
                                         'flex items-center justify-between border-b-2 border-dashed border-gray-300 py-3 dark:border-stone-600',
                                         index === actionLinkList.length - 1 &&
-                                            'border-b-0 !pb-0',
+                                            'border-b-0 border-none !pb-0',
                                         index === 0 && '!pt-0'
                                     )}
                                 >

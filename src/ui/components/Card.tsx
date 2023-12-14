@@ -23,11 +23,14 @@ export default function Card({
             )}
         >
             {!!backgroundUrl && (
-                <div className="absolute inset-0 h-full w-full overflow-hidden">
+                <div className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden">
                     <img
                         src={backgroundUrl}
                         alt="cart-bg"
-                        className="absolute left-0 top-0 z-10 opacity-10 dark:invert"
+                        className={cx(
+                            'absolute left-0 top-0 z-10 opacity-10 dark:invert',
+                            'w-full'
+                        )}
                     />
                 </div>
             )}
