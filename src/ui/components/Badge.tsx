@@ -28,7 +28,7 @@ export default function Badge({
     return (
         <div
             className={cx(
-                'text-base-res px-2 py-1 font-bold md:px-3',
+                'text-base-res flex-center px-2 py-1 font-bold md:px-3',
                 size === 'sm' && 'text-sm',
                 size === 'xs' && 'text-xs',
                 rounded ? 'rounded-full' : 'rounded-lg',

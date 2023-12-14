@@ -27,7 +27,7 @@ interface IOpenProps {
 }
 
 interface IContentProps {
-    children: ReactNode
+    children: ReactElement
     name: string
     size?: 'md' | 'lg'
 }
@@ -80,7 +80,7 @@ function Content({ children, name, size = 'md' }: IContentProps) {
             />
             <div
                 className={cx(
-                    'bg-main shadow-main flex-cols fixed left-1/2 top-1/2 z-[60] max-h-[90%] -translate-x-1/2 -translate-y-1/2 gap-6 overflow-y-auto rounded-lg px-12 py-6',
+                    'bg-main shadow-main flex-cols fixed left-1/2 top-1/2 z-[60] max-h-[90%] -translate-x-1/2 -translate-y-1/2 gap-6  rounded-lg px-12 py-6',
                     size === 'lg' && 'w-11/12'
                 )}
             >
@@ -91,7 +91,11 @@ function Content({ children, name, size = 'md' }: IContentProps) {
                 >
                     <Icons name="xmark" />
                 </span>
-                <div>{children}</div>
+                <div className="overflow-y-auto py-2">
+                    {cloneElement(children, {
+                        onClick: () => handleToggleModal?.('close'),
+                    })}
+                </div>
             </div>
         </>,
         document.body

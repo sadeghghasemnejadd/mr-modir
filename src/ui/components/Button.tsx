@@ -4,7 +4,7 @@ import cx from 'classnames'
 interface IButtonProps {
     type?: 'submit' | 'button' | 'reset'
     children: ReactNode
-    variant?: 'outline' | 'fill'
+    variant?: 'outline' | 'fill' | 'ghost'
     classNames?: string
     size?: 'md' | 'lg'
     onClick?: () => void
@@ -26,7 +26,9 @@ export default function Button({
                 variant === 'fill' &&
                     'bg-primary-500 text-gray-50 dark:bg-primary-800 dark:text-stone-200 dark:hover:bg-primary-600',
                 variant === 'outline' && 'text-stone-800',
-                size === 'lg' && 'text-md',
+                variant === 'ghost' &&
+                    'border-none bg-slate-200 hover:bg-slate-300 hover:text-slate-700 dark:bg-slate-600 dark:hover:bg-slate-500 dark:hover:text-slate-300',
+                size === 'lg' && 'text-md px-6 py-3',
                 size === 'md' && 'p-3 text-[8px] md:text-xs'
             )}
             aria-hidden="true"
