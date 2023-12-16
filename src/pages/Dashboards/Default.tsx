@@ -1,6 +1,7 @@
 import ActiveOrders from '../../Features/Default/ActiveOrders'
 import IncomeChart from '../../Features/Default/IncomeChart'
 import LatestOrders from '../../Features/Default/LatestOrders'
+import PerformanceOverview from '../../Features/Default/PerformanceOverview'
 import Seller from '../../Features/Default/Seller'
 import UpgradePro from '../../Features/Default/UpgradePro/UpgradePro'
 
@@ -12,6 +13,7 @@ export default function Default() {
             <IncomeChart />
             <LatestOrders />
             <UpgradePro />
+            <PerformanceOverview />
         </section>
     )
 }

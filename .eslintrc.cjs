@@ -65,5 +65,6 @@ module.exports = {
         'arrow-body-style': 0,
         'no-nested-ternary': 0,
         'react/jsx-closing-tag-location': 0,
+        'no-underscore-dangle': 0,
     },
 }
