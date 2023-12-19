@@ -32,11 +32,9 @@ export default function LatestOrders() {
                                     {quickActionList.map((action) => (
                                         <li
                                             key={action.id}
-                                            className="rounded-lg px-3 py-2 transition-none hover:bg-primary-100 hover:text-primary-950 dark:hover:bg-primary-800 dark:hover:text-primary-50"
+                                            className="cursor-pointer rounded-lg px-3 py-2 transition-none hover:bg-primary-100 hover:text-primary-950 dark:hover:bg-primary-800 dark:hover:text-primary-50"
                                         >
-                                            <Link to={action.route}>
-                                                {action.name}
-                                            </Link>
+                                            {action.name}
                                         </li>
                                     ))}
                                 </ul>

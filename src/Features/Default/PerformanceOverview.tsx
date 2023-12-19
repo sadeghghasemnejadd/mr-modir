@@ -12,17 +12,17 @@ const datasets = [
     {
         backgroundColor: colorsData.blue[400],
         label: 'تلویزیون',
-        data: [{ x: 120, y: 100, r: 30 }],
+        data: [{ x: 60, y: 300, r: 30 }],
     },
     {
         backgroundColor: colorsData.green[300],
         label: 'اینستاگرام',
-        data: [{ x: 130, y: 200, r: 25 }],
+        data: [{ x: 100, y: 200, r: 25 }],
     },
     {
         backgroundColor: colorsData.red[600],
         label: 'لینکدین',
-        data: [{ x: 140, y: 300, r: 20 }],
+        data: [{ x: 130, y: 300, r: 20 }],
     },
     {
         backgroundColor: colorsData.orange[500],

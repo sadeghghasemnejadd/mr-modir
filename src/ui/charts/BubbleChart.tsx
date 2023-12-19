@@ -32,7 +32,10 @@ export default function BubbleChart({
         aspectRatio: 1 / 2,
         scales: {
             x: {
+                min: 0,
+                max: 200,
                 grid: {
+                    display: false,
                     color:
                         themeMode === 'dark' || themeMode === 'system'
                             ? 'rgba(255,255,255,0.4)'
@@ -40,6 +43,8 @@ export default function BubbleChart({
                 },
             },
             y: {
+                min: 0,
+                max: 500,
                 grid: {
                     color:
                         themeMode === 'dark' || themeMode === 'system'
