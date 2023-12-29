@@ -41,7 +41,7 @@ export default function UpgradeProModalContent({
                         className={cx(
                             'cursor-pointer rounded-lg rounded-bl-none rounded-tl-none bg-slate-200 px-6 py-3 duration-0 hover:bg-slate-300 dark:bg-slate-600 dark:hover:bg-slate-500',
                             durationPlan === 'yearly' &&
-                                'bg-slate-300 dark:bg-slate-500'
+                                '!bg-slate-300 dark:!bg-slate-500'
                         )}
                         aria-hidden="true"
                         onClick={() => handleChangeDurationPlan('yearly')}
@@ -52,7 +52,7 @@ export default function UpgradeProModalContent({
                         className={cx(
                             'cursor-pointer rounded-lg rounded-br-none rounded-tr-none bg-slate-200 px-6 py-3 duration-0 hover:bg-slate-300 dark:bg-slate-600 dark:hover:bg-slate-500',
                             durationPlan === 'monthly' &&
-                                'bg-slate-300 dark:bg-slate-500'
+                                '!bg-slate-300 dark:!bg-slate-500'
                         )}
                         aria-hidden="true"
                         onClick={() => handleChangeDurationPlan('monthly')}
