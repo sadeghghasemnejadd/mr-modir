@@ -37,3 +37,10 @@ export const getLocaleHours = (date: Date): string =>
         minute: '2-digit',
         hour12: false,
     }).format(date)
+
+export const getLocaleDate = (date: Date): string =>
+    new Intl.DateTimeFormat('fa-ir', {
+        month: 'long',
+        day: '2-digit',
+        year: 'numeric',
+    }).format(date)

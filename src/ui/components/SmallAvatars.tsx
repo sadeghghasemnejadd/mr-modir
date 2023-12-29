@@ -32,9 +32,11 @@ export default function SmallAvatars({
                     </div>
                 </Tooltip>
             ))}
-            <div className="size-12 avatar flex-center bg-main relative -mr-2 text-sm hover:z-10">
-                {avatarsArray.length - maxSize}+
-            </div>
+            {avatarsArray.length > maxSize && (
+                <div className="size-12 avatar flex-center bg-main relative -mr-2 text-sm hover:z-10">
+                    {avatarsArray.length - maxSize}+
+                </div>
+            )}
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import ActiveOrders from '../../Features/Default/ActiveOrders'
 import BestAuthors from '../../Features/Default/BestAuthors'
 import IncomeChart from '../../Features/Default/IncomeChart'
+import LastProject from '../../Features/Default/LastProject'
 import LatestOrders from '../../Features/Default/LatestOrders'
 import PerformanceOverview from '../../Features/Default/PerformanceOverview'
 import Seller from '../../Features/Default/Seller'
@@ -16,6 +17,7 @@ export default function Default() {
             <UpgradePro />
             <PerformanceOverview />
             <BestAuthors />
+            <LastProject />
         </section>
     )
 }
