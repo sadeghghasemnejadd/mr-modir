@@ -21,10 +21,10 @@ export default function LastProject() {
                         <img
                             src="images/annie-spratt.webp"
                             alt="group"
-                            className="aspect-video w-full"
+                            className="aspect-video h-full w-full"
                         />
                     </div>
-                    <div className="flex-cols w-full gap-6">
+                    <div className="flex-cols w-full gap-12">
                         <div className="flex items-center justify-between">
                             <div className="flex-cols gap-2">
                                 <p className="text-mute">اخرین پروژه</p>
