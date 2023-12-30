@@ -32,7 +32,7 @@ export default function LastProject() {
                             </div>
                             <Badge
                                 text="در حال انجام"
-                                color="primary"
+                                color="pending"
                                 size="sm"
                             />
                         </div>

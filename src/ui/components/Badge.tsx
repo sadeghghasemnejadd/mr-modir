@@ -3,7 +3,7 @@ import Icons from '../../icons/Icons'
 
 interface IBadgeProps {
     text: string | number
-    color?: 'success' | 'error' | 'main' | 'primary'
+    color?: 'success' | 'error' | 'main' | 'primary' | 'pending'
     rounded?: boolean
     size?: 'sm' | 'md' | 'xs'
     textColor?: 'success' | 'error' | 'main'
@@ -17,6 +17,8 @@ const colorMain =
     'bg-gray-200 dark:bg-stone-700 text-primary-900 dark:text-primary-100'
 const colorPrimary =
     'bg-primary-300 text-primary-900 dark:bg-primary-800 dark:text-primary-100'
+const colorPending =
+    'bg-blue-300 text-blue-900 dark:bg-blue-800 dark:text-blue-100'
 export default function Badge({
     text,
     color = 'success',
@@ -35,7 +37,8 @@ export default function Badge({
                 color === 'success' && colorSuccess,
                 color === 'error' && colorError,
                 color === 'main' && colorMain,
-                color === 'primary' && colorPrimary
+                color === 'primary' && colorPrimary,
+                color === 'pending' && colorPending
             )}
         >
             <div className="flex-v-center gap-1">
