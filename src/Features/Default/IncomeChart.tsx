@@ -14,7 +14,7 @@ export default function IncomeChart() {
                 <div className="flex-cols h-full justify-between">
                     <div>
                         <div className="flex-v-center gap-3">
-                            <h2 className="text-2xl font-extrabold">
+                            <h2 className="text-title">
                                 {getCurrency(252_000)}
                             </h2>
                             <Badge

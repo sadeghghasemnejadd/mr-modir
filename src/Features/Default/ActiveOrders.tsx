@@ -11,9 +11,7 @@ export default function ActiveOrders() {
             >
                 <div className="flex h-full flex-col justify-between">
                     <div>
-                        <h2 className="text-2xl font-extrabold text-stone-200">
-                            34
-                        </h2>
+                        <h2 className="text-title text-stone-200">34</h2>
                         <p className="text-sm text-stone-200">
                             سفارش های در حال انجام
                         </p>

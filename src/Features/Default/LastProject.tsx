@@ -28,7 +28,7 @@ export default function LastProject() {
                         <div className="flex items-center justify-between">
                             <div className="flex-cols gap-2">
                                 <p className="text-mute">اخرین پروژه</p>
-                                <h2 className="text-2xl">4 نفره</h2>
+                                <h2 className="text-title">4 نفره</h2>
                             </div>
                             <Badge
                                 text="در حال انجام"

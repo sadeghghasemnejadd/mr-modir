@@ -48,7 +48,7 @@ export default function PerformanceOverview() {
                 <div className="flex-cols gap-6">
                     <div className="flex items-center justify-between">
                         <div className="flex-cols gap-1">
-                            <h2 className="text-xl font-bold">
+                            <h2 className="text-title">
                                 خلاصه فروش از طریق تبلیغات
                             </h2>
                             <p className="text-mute">تمامی کاربران</p>

@@ -1,12 +1,28 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import {
+    ReactElement,
+    ReactNode,
+    cloneElement,
+    createContext,
+    useCallback,
+    useContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react'
+import cx from 'classnames'
 import Icons from '../../icons/Icons'
 import clickOutside from '../../utils/clickOutSide'
 
+interface IActionContextValue {
+    handleOpenMenu?: () => void
+}
+const ActionContext = createContext<IActionContextValue>({})
 interface IHeaderProps {
     children: ReactNode
 }
 interface IBodyProps {
-    children: ReactNode
+    children: ReactElement
 }
 interface IFooterProps {
     children: ReactNode
@@ -14,19 +30,28 @@ interface IFooterProps {
 interface IActionButton {
     children: ReactNode
     name: string
+    thumbnail?: ReactNode
+    color?: 'main' | 'secondary'
+    fixedWidth?: boolean
 }
 
-function ActionButton({ children, name }: IActionButton) {
+function ActionButton({
+    children,
+    name,
+    thumbnail,
+    color = 'main',
+    fixedWidth = true,
+}: IActionButton) {
     const actionButtonRef = useRef<HTMLDivElement>(null)
     const [openMenu, setOpenMenu] = useState<string>('')
 
-    const handleOpenMenu = () => {
+    const handleOpenMenu = useCallback(() => {
         if (openMenu === name) {
             setOpenMenu('')
             return
         }
         setOpenMenu(name)
-    }
+    }, [name, openMenu])
 
     useEffect(() => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -45,21 +70,37 @@ function ActionButton({ children, name }: IActionButton) {
             document.removeEventListener('click', handleClickOutside)
         }
     }, [actionButtonRef])
+
+    const actionContextValue = useMemo(
+        () => ({ handleOpenMenu }),
+        [handleOpenMenu]
+    )
     return (
-        <div ref={actionButtonRef} className="relative">
-            <button
-                className="[&>svg]:size-3 rounded-md bg-gray-300 p-1 dark:bg-stone-600"
-                aria-hidden="true"
-                onClick={handleOpenMenu}
-            >
-                <Icons name="ellipsis" />
-            </button>
-            {openMenu === name && (
-                <div className="absolute left-full top-[70%] w-48 rounded-lg bg-stone-50 shadow-lg dark:bg-stone-700">
-                    {children}
-                </div>
-            )}
-        </div>
+        <ActionContext.Provider value={actionContextValue}>
+            <div ref={actionButtonRef} className="relative">
+                <button
+                    className={cx(
+                        '[&>svg]:size-3 rounded-md  p-1 ',
+                        color === 'main' && 'bg-gray-300 dark:bg-stone-600',
+                        color === 'secondary' && 'bg-gray-200 dark:bg-stone-600'
+                    )}
+                    aria-hidden="true"
+                    onClick={handleOpenMenu}
+                >
+                    {thumbnail || <Icons name="ellipsis" />}
+                </button>
+                {openMenu === name && (
+                    <div
+                        className={cx(
+                            fixedWidth ? 'w-48' : 'min-w-full',
+                            'absolute left-full top-[70%] z-50 rounded-lg bg-stone-100 shadow-lg dark:bg-stone-700'
+                        )}
+                    >
+                        {children}
+                    </div>
+                )}
+            </div>
+        </ActionContext.Provider>
     )
 }
 
@@ -68,7 +109,14 @@ function Header({ children }: IHeaderProps) {
 }
 
 function Body({ children }: IBodyProps) {
-    return <div>{children}</div>
+    const { handleOpenMenu } = useContext(ActionContext)
+    return (
+        <div className="w-full">
+            {cloneElement(children, {
+                onClick: () => handleOpenMenu?.(),
+            })}
+        </div>
+    )
 }
 
 function Footer({ children }: IFooterProps) {

@@ -20,9 +20,7 @@ export default function LatestOrders() {
             <Card fixedHeight>
                 <div className="flex-cols h-full justify-between">
                     <div className="flex items-center justify-between">
-                        <h2 className="text-2xl font-extrabold">
-                            آخرین سفارشات
-                        </h2>
+                        <h2 className="text-title">آخرین سفارشات</h2>
                         <ActionButton name="latestOrder">
                             <ActionButton.Header>
                                 <p className="text-xs font-bold">عملیات سریع</p>

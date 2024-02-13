@@ -5,6 +5,7 @@ import LastProject from '../../Features/Default/LastProject'
 import LatestOrders from '../../Features/Default/LatestOrders'
 import PerformanceOverview from '../../Features/Default/PerformanceOverview'
 import Seller from '../../Features/Default/Seller'
+import Support from '../../Features/Default/Support/Support'
 import UpgradePro from '../../Features/Default/UpgradePro/UpgradePro'
 
 export default function Default() {
@@ -18,6 +19,7 @@ export default function Default() {
             <PerformanceOverview />
             <BestAuthors />
             <LastProject />
+            <Support />
         </section>
     )
 }

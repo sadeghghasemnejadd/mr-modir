@@ -158,4 +158,11 @@
     .text-mute {
         @apply text-sm opacity-60;
     }
+    .text-title {
+        @apply text-2xl font-extrabold;
+    }
+}
+
+.MuiDateRangeCalendar-root > div[style*='z-index: 100000; width: 100%; '] {
+    display: none !important;
 }

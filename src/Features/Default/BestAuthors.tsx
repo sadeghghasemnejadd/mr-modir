@@ -177,7 +177,7 @@ export default function BestAuthors() {
                 <div className="flex-cols gap-6">
                     <div className="flex items-center justify-between">
                         <div>
-                            <h2 className="font-bold">برترین نویسندگان</h2>
+                            <h2 className="text-title">برترین نویسندگان</h2>
                             <p className="text-mute">
                                 23.2% میانگین مقاله در روز
                             </p>
@@ -187,7 +187,7 @@ export default function BestAuthors() {
                                 <p className="text-xs font-bold">عملیات سریع</p>
                             </ActionButton.Header>
                             <ActionButton.Body>
-                                <ul className="flex-cols px-3 py-3 text-xs">
+                                <ul className="flex-cols p-3 text-xs">
                                     {quickActionList.map((action) => (
                                         <li
                                             key={action.id}
